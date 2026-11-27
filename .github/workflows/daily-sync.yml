@@ -21,7 +21,7 @@ jobs:
           node-version: '24'
 
       - name: Install dependencies
-        run: npm install --no-audit --no-fund
+        run: npm install --no-audit --no-fund --legacy-peer-deps
 
       - name: Fetch Direct Biotech ATS, NHS Jobs, Reed UK, NHSBSA & NICE Feeds
         env:

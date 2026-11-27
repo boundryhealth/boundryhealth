@@ -48,7 +48,7 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '24'
-      - run: npm install --no-audit --no-fund
+      - run: npm install --no-audit --no-fund --legacy-peer-deps
       - env:
           JOOBLE_API_KEY: \${{ secrets.JOOBLE_API_KEY }}
           REED_API_KEY: \${{ secrets.REED_API_KEY }}
