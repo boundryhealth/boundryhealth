@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Check, Copy, Download, Lock, RefreshCw } from 'lucide-react';
+import { Check, ChevronRight, Copy, Download, Lock, RefreshCw, XCircle } from 'lucide-react';
 import type { ApiUsageItem, LiveFeedStatus, LiveNiceGuidanceItem } from '../../server/dataSync';
 import type { NewsletterSubscriber, NewsletterTrack } from '../../server/newsletterStore';
 import { downloadCsv } from '../utils/exportCsv';
@@ -58,7 +58,8 @@ jobs:
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: \${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist`;
+          publish_dir: ./dist
+          cname: boundry.space`;
 
 export const AnalyticsAndPipelineView: React.FC<AnalyticsAndPipelineViewProps> = ({
   feeds,
@@ -99,12 +100,10 @@ export const AnalyticsAndPipelineView: React.FC<AnalyticsAndPipelineViewProps> =
         return;
       }
       if (resAnalytics.ok) {
-        const data = (await resAnalytics.json()) as AnalyticsSummary;
-        setAnalytics(data);
+        setAnalytics((await resAnalytics.json()) as AnalyticsSummary);
       }
       if (resSubs.ok) {
-        const subData = (await resSubs.json()) as NewsletterSummary;
-        setNewsletter(subData);
+        setNewsletter((await resSubs.json()) as NewsletterSummary);
       }
     } catch {
       // Non-blocking
@@ -228,27 +227,113 @@ export const AnalyticsAndPipelineView: React.FC<AnalyticsAndPipelineViewProps> =
     );
   }
 
+  const formatTs = (iso?: string) => {
+    if (!iso) return 'Not yet synced';
+    const d = new Date(iso);
+    return Number.isNaN(d.getTime()) ? iso : d.toLocaleString('en-GB');
+  };
+
+  const niceFeed = feeds.find((f) => f.source.includes('NICE'));
+  const opFeed = feeds.find(
+    (f) => f.source.includes('NHSBSA') || f.source.includes('OpenPrescribing')
+  );
+  const atsFeed = feeds.find((f) => f.source.includes('Direct UK Biotech ATS'));
+  const jobFeeds = feeds.filter(
+    (f) => !f.source.includes('NICE') && !f.source.includes('NHSBSA') && !f.source.includes('OpenPrescribing')
+  );
+  const liveJobFeedsOk = jobFeeds.some((f) => f.status === 'live' && f.recordsFetched > 0);
+  const jobFeedTs = atsFeed?.lastSyncedAt || lastSyncAt;
+  const syncAgeHours = (Date.now() - Date.parse(lastSyncAt || '')) / (1000 * 60 * 60);
+  const syncIsRecent = Number.isFinite(syncAgeHours) && syncAgeHours <= 36;
+  const liveFeedCount = feeds.filter((f) => f.status === 'live').length;
+
+  const tileRows = [
+    {
+      page: 'Cluster Map',
+      tile: 'Bubble Map, Top 5 Cities & Live Vacancies',
+      updated: formatTs(jobFeedTs),
+      cadence: 'Every 24h',
+      source: 'Direct ATS · NHS Jobs · Reed · SerpAPI · Adzuna',
+      isOk: liveJobFeedsOk && syncIsRecent,
+      statusLabel: liveJobFeedsOk && syncIsRecent ? 'OK' : 'Check feed',
+    },
+    {
+      page: 'Cluster Map',
+      tile: 'Lab Capacity (sq ft) & UK VC Share',
+      updated: 'Q4 2026',
+      cadence: 'Quarterly',
+      source: 'UK Science Park & BIA Infrastructure Audit',
+      isOk: true,
+      statusLabel: 'OK',
+    },
+    {
+      page: 'Market Forecast',
+      tile: '2025–2035 Trajectory & Quarterly Breakdown',
+      updated: 'Q4 2026',
+      cadence: 'Quarterly',
+      source: 'ONS · BioIndustry Association · ABPI Series',
+      isOk: true,
+      statusLabel: 'OK',
+    },
+    {
+      page: 'Market Forecast',
+      tile: 'GBP Salary Bands, Sub-Sectors & Skill Shifts',
+      updated: `Q4 2026 · ${formatTs(lastSyncAt)}`,
+      cadence: 'Quarterly + 24h',
+      source: 'Regional Pay Benchmarks & Live Role Demand',
+      isOk: syncIsRecent,
+      statusLabel: syncIsRecent ? 'OK' : 'Stale',
+    },
+    {
+      page: 'NICE-to-NHS',
+      tile: 'NICE Technology Appraisals & Guidance',
+      updated: formatTs(niceFeed?.lastSyncedAt || lastSyncAt),
+      cadence: 'Every 24h',
+      source: 'NICE Technology Appraisals Feed',
+      isOk: niceFeed?.status === 'live',
+      statusLabel: niceFeed?.status === 'live' ? 'OK' : 'Fallback',
+    },
+    {
+      page: 'NICE-to-NHS',
+      tile: 'Actual NHS Prescribing & Divergence Chart',
+      updated: formatTs(opFeed?.lastSyncedAt || lastSyncAt),
+      cadence: 'Monthly NHSBSA',
+      source: 'NHSBSA English Prescribing Dataset API',
+      isOk: opFeed?.status === 'live',
+      statusLabel: opFeed?.status === 'live' ? 'OK' : 'Fallback',
+    },
+    {
+      page: 'Scope & Method',
+      tile: 'Live Snapshot Takeaways & Hub Counts',
+      updated: formatTs(lastSyncAt),
+      cadence: 'Every 24h',
+      source: 'Live Snapshot Summary',
+      isOk: liveJobFeedsOk && syncIsRecent,
+      statusLabel: liveJobFeedsOk && syncIsRecent ? 'OK' : 'Stale',
+    },
+  ];
+
   return (
-    <div className="space-y-8 max-w-5xl">
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-[#E5E3DC]">
+    <div className="space-y-4 max-w-5xl">
+      {/* Compact Header + Controls */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#E5E3DC]">
         <div>
-          <div className="text-xs font-mono text-[#78756E]">Private Owner Route · /owner-analytics</div>
-          <h1 className="text-2xl font-semibold tracking-tight text-[#1C1B18] mt-1">
-            Analytics & Automated Data Pipeline
+          <h1 className="text-xl font-semibold tracking-tight text-[#1C1B18]">
+            Owner Analytics &amp; Sync Console
           </h1>
-          <p className="mt-1 text-sm text-[#57544D]">
-            First-party visitor telemetry and automated UK API refresh controls.
+          <p className="text-xs font-mono text-[#78756E]">
+            boundry.space · Last sync: {formatTs(lastSyncAt)}
           </p>
         </div>
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="flex items-center gap-2 shrink-0">
           <button
             type="button"
             onClick={handleManualSync}
             disabled={syncing}
-            className="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium bg-[#1C1B18] text-white rounded-md hover:bg-[#3E3C37] disabled:opacity-60 transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-[#1C1B18] text-white rounded-md hover:bg-[#3E3C37] disabled:opacity-60 transition-colors cursor-pointer"
           >
-            <RefreshCw className={`w-4 h-4 ${syncing ? 'animate-spin' : ''}`} />
-            {syncing ? 'Syncing...' : 'Run Live Sync Now'}
+            <RefreshCw className={`w-3.5 h-3.5 ${syncing ? 'animate-spin' : ''}`} />
+            {syncing ? 'Syncing...' : 'Run Live Sync'}
           </button>
           <button
             type="button"
@@ -256,383 +341,94 @@ export const AnalyticsAndPipelineView: React.FC<AnalyticsAndPipelineViewProps> =
               setOwnerToken(null);
               onExitHiddenView();
             }}
-            className="px-3 py-2 text-xs font-medium border border-[#D6D3CB] rounded-md text-[#57544D] hover:text-[#1C1B18] cursor-pointer"
+            className="px-3 py-1.5 text-xs font-medium border border-[#D6D3CB] rounded-md text-[#57544D] hover:text-[#1C1B18] cursor-pointer"
           >
-            Lock & Exit
+            Lock &amp; Exit
           </button>
         </div>
       </div>
 
-      {/* First-Party Backend Analytics */}
-      <section className="bg-white border border-[#E5E3DC] rounded-lg p-6 space-y-5">
-        <div className="flex flex-wrap items-baseline justify-between gap-2">
-          <h2 className="text-base font-semibold text-[#1C1B18]">
-            First-Party Backend Analytics
-          </h2>
-          <span className="text-xs font-mono text-[#78756E]">
-            Authenticated Owner Session · Zero third-party cookies
-          </span>
-        </div>
-
-        {analytics ? (
-          <>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-3 border-y border-[#E5E3DC]">
-              <div>
-                <div className="text-xs text-[#78756E]">Total Page Views</div>
-                <div className="mt-1 text-2xl font-semibold font-mono tabular-nums text-[#1C1B18]">
-                  {analytics.totalViews}
-                </div>
-              </div>
-              <div>
-                <div className="text-xs text-[#78756E]">Unique Sessions</div>
-                <div className="mt-1 text-2xl font-semibold font-mono tabular-nums text-[#1C1B18]">
-                  {analytics.uniqueVisitors}
-                </div>
-              </div>
-              <div>
-                <div className="text-xs text-[#78756E]">CSV Exports</div>
-                <div className="mt-1 text-2xl font-semibold font-mono tabular-nums text-[#1E40AF]">
-                  {analytics.csvExports}
-                </div>
-              </div>
-              <div>
-                <div className="text-xs text-[#78756E]">Tracked Interactions</div>
-                <div className="mt-1 text-2xl font-semibold font-mono tabular-nums text-[#1C1B18]">
-                  {analytics.totalEvents}
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
-              <div>
-                <h3 className="font-medium text-[#1C1B18] mb-2">Views by Tool</h3>
-                <div className="space-y-2">
-                  {Object.entries(analytics.viewsByModule).map(([mod, views]) => (
-                    <div key={mod} className="flex items-center justify-between py-1 border-b border-[#EFECE5]">
-                      <span className="text-[#57544D]">{mod}</span>
-                      <span className="font-mono tabular-nums text-[#1C1B18]">{views}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="font-medium text-[#1C1B18] mb-2">Most Inspected Clusters</h3>
-                {analytics.topClusters.length === 0 ? (
-                  <p className="text-[#78756E]">No cluster clicks recorded yet.</p>
-                ) : (
-                  <div className="space-y-2">
-                    {analytics.topClusters.map((c) => (
-                      <div key={c.name} className="flex items-center justify-between py-1 border-b border-[#EFECE5]">
-                        <span className="text-[#57544D]">{c.name}</span>
-                        <span className="font-mono tabular-nums text-[#1C1B18]">{c.clicks}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              <div>
-                <h3 className="font-medium text-[#1C1B18] mb-2">Most Inspected Drugs</h3>
-                {analytics.topDrugs.length === 0 ? (
-                  <p className="text-[#78756E]">No drug lookups recorded yet.</p>
-                ) : (
-                  <div className="space-y-2">
-                    {analytics.topDrugs.map((d) => (
-                      <div key={d.name} className="flex items-center justify-between py-1 border-b border-[#EFECE5]">
-                        <span className="text-[#57544D] truncate pr-2">{d.name}</span>
-                        <span className="font-mono tabular-nums text-[#1C1B18]">{d.clicks}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-          </>
-        ) : (
-          <p className="text-xs text-[#78756E]">Loading analytics...</p>
-        )}
-      </section>
-
-      {/* Newsletter Subscribers (Owner-Only) */}
-      <section className="bg-white border border-[#E5E3DC] rounded-lg p-6 space-y-4">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <div>
-            <h2 className="text-base font-semibold text-[#1C1B18]">
-              Newsletter Subscribers ({newsletter?.totalSubscribers ?? 0})
-            </h2>
-            <p className="text-xs text-[#78756E]">
-              Jobs only: {newsletter?.byTrack.jobs ?? 0} · NICE-to-NHS: {newsletter?.byTrack['nice-nhs'] ?? 0} · Both: {newsletter?.byTrack.both ?? 0}
-            </p>
+      {/* Compact 4-KPI Bar */}
+      <div className="bg-white border border-[#E5E3DC] rounded-lg px-4 py-3 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+        <div>
+          <div className="text-[#78756E]">Total Page Views</div>
+          <div className="font-mono text-lg font-semibold tabular-nums text-[#1C1B18]">
+            {analytics?.totalViews ?? '—'}
           </div>
-          {newsletter && newsletter.subscribers.length > 0 && (
-            <button
-              type="button"
-              onClick={() =>
-                downloadCsv(
-                  'boundry-newsletter-subscribers.csv',
-                  ['Email', 'Track', 'Subscribed At'],
-                  newsletter.subscribers.map((s) => [s.email, s.track, s.subscribedAt])
-                )
-              }
-              className="inline-flex items-center gap-2 px-3 py-2 text-xs font-medium border border-[#D6D3CB] rounded-md text-[#1C1B18] hover:bg-[#FAF9F6] cursor-pointer"
-            >
-              <Download className="w-4 h-4" />
-              Export Subscribers CSV
-            </button>
-          )}
         </div>
-
-        {newsletter && newsletter.subscribers.length > 0 ? (
-          <div className="divide-y divide-[#E5E3DC] text-xs max-h-60 overflow-y-auto">
-            {newsletter.subscribers.map((sub) => (
-              <div key={sub.email} className="py-2 flex items-center justify-between gap-4">
-                <span className="font-medium text-[#1C1B18]">{sub.email}</span>
-                <span className="font-mono text-[#78756E]">
-                  {sub.track} · {sub.subscribedAt.slice(0, 10)}
-                </span>
-              </div>
-            ))}
+        <div>
+          <div className="text-[#78756E]">Unique Sessions</div>
+          <div className="font-mono text-lg font-semibold tabular-nums text-[#1C1B18]">
+            {analytics?.uniqueVisitors ?? '—'}
           </div>
-        ) : (
-          <p className="text-xs text-[#78756E]">No newsletter subscribers yet.</p>
-        )}
-      </section>
-
-      {/* Page & Tile Freshness Schedule */}
-      {(() => {
-        const formatTs = (iso?: string) => {
-          if (!iso) return 'Not yet synced';
-          const d = new Date(iso);
-          return Number.isNaN(d.getTime()) ? iso : d.toLocaleString('en-GB');
-        };
-        const niceFeed = feeds.find((f) => f.source.includes('NICE'));
-        const opFeed = feeds.find((f) => f.source.includes('OpenPrescribing'));
-        const atsFeed = feeds.find((f) => f.source.includes('Direct UK Biotech ATS'));
-        const jobFeedTs = atsFeed?.lastSyncedAt || lastSyncAt;
-
-        const tileRows = [
-          {
-            page: 'Cluster Map',
-            tile: 'Bubble Map, Top 5 Cities & Live Vacancies',
-            updated: formatTs(jobFeedTs),
-            cadence: 'Every 24h (06:00 UTC)',
-            source: 'Direct ATS · Reed · Jooble · SerpAPI · Adzuna',
-            isLive: true,
-          },
-          {
-            page: 'Cluster Map',
-            tile: 'Lab Capacity (sq ft) & UK VC Share',
-            updated: 'Q4 2026 Benchmark',
-            cadence: 'Quarterly',
-            source: 'UK Science Park & BIA Infrastructure Audit',
-            isLive: false,
-          },
-          {
-            page: 'Market Forecast',
-            tile: '2025–2035 Trajectory & Quarterly Breakdown',
-            updated: 'Q4 2026 Release',
-            cadence: 'Quarterly',
-            source: 'ONS · BioIndustry Association · ABPI Series',
-            isLive: false,
-          },
-          {
-            page: 'Market Forecast',
-            tile: 'GBP Salary Bands, Sub-Sectors & Skill Shifts',
-            updated: `Q4 2026 + Sync (${formatTs(lastSyncAt)})`,
-            cadence: 'Quarterly + 24h Snapshot',
-            source: 'Regional Pay Benchmarks & Live Role Demand',
-            isLive: true,
-          },
-          {
-            page: 'NICE-to-NHS',
-            tile: 'NICE Technology Appraisals & Guidance',
-            updated: formatTs(niceFeed?.lastSyncedAt || lastSyncAt),
-            cadence: 'Every 24h (06:00 UTC)',
-            source: 'NICE Published Guidance RSS',
-            isLive: niceFeed?.status === 'live',
-          },
-          {
-            page: 'NICE-to-NHS',
-            tile: 'Actual NHS Prescribing & Divergence Chart',
-            updated: formatTs(opFeed?.lastSyncedAt || lastSyncAt),
-            cadence: 'Monthly NHSBSA (Polled 24h)',
-            source: 'OpenPrescribing.net NHS England API',
-            isLive: opFeed?.status === 'live',
-          },
-          {
-            page: 'Scope & Method',
-            tile: 'Live Snapshot Takeaways & Hub Counts',
-            updated: formatTs(lastSyncAt),
-            cadence: 'Every 24h (Auto-computed)',
-            source: 'Live Snapshot Summary',
-            isLive: true,
-          },
-        ];
-
-        return (
-          <section className="bg-white border border-[#E5E3DC] rounded-lg overflow-hidden">
-            <div className="px-6 py-4 border-b border-[#E5E3DC] flex flex-wrap items-baseline justify-between gap-2">
-              <div>
-                <h2 className="text-base font-semibold text-[#1C1B18]">
-                  Page &amp; Tile Update Status
-                </h2>
-                <p className="text-xs text-[#78756E] mt-0.5">
-                  When each public page and visual tile was last refreshed and its automatic schedule.
-                </p>
-              </div>
-              <span className="text-xs font-mono text-[#78756E]">
-                Global sync: {formatTs(lastSyncAt)}
-              </span>
-            </div>
-
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse text-xs">
-                <thead>
-                  <tr className="bg-[#F3F2EE] border-b border-[#E5E3DC] font-medium text-[#57544D]">
-                    <th className="py-3 px-5">Page</th>
-                    <th className="py-3 px-4">Tile / Visual</th>
-                    <th className="py-3 px-4">Last Updated</th>
-                    <th className="py-3 px-4">Cadence</th>
-                    <th className="py-3 px-5">Backing Source</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-[#E5E3DC]">
-                  {tileRows.map((row) => (
-                    <tr key={`${row.page}-${row.tile}`} className="hover:bg-[#FAF9F6]">
-                      <td className="py-3 px-5 font-medium text-[#1C1B18] whitespace-nowrap">
-                        {row.page}
-                      </td>
-                      <td className="py-3 px-4 text-[#1C1B18]">{row.tile}</td>
-                      <td className="py-3 px-4 font-mono tabular-nums text-[#1E40AF] whitespace-nowrap">
-                        {row.updated}
-                      </td>
-                      <td className="py-3 px-4 font-mono text-[#57544D] whitespace-nowrap">
-                        {row.cadence}
-                      </td>
-                      <td className="py-3 px-5 text-[#57544D]">{row.source}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
-        );
-      })()}
-
-      {/* Automated UK Data Feeds Status */}
-      <section className="bg-white border border-[#E5E3DC] rounded-lg p-6 space-y-4">
-        <div className="flex flex-wrap items-baseline justify-between gap-2">
-          <h2 className="text-base font-semibold text-[#1C1B18]">
-            Zero-Card Automated 24-Hour UK Data Feeds
-          </h2>
-          <span className="text-xs font-mono text-[#78756E]">
-            Last sync: {new Date(lastSyncAt).toLocaleString('en-GB')}
-          </span>
         </div>
-
-        <div className="divide-y divide-[#E5E3DC] text-xs">
-          {feeds.map((feed) => (
-            <div key={feed.source} className="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-              <div>
-                <div className="font-medium text-[#1C1B18]">{feed.source}</div>
-                <div className="text-[#57544D] mt-0.5">{feed.note}</div>
-              </div>
-              <div className="flex items-center gap-4 shrink-0 font-mono">
-                <span className="text-[#78756E]">{feed.recordsFetched} records</span>
-                <span
-                  className={
-                    feed.status === 'live'
-                      ? 'text-[#15803D] font-medium'
-                      : feed.status === 'needs_key'
-                      ? 'text-[#B45309] font-medium'
-                      : 'text-[#57544D] font-medium'
-                  }
-                >
-                  {feed.status === 'live'
-                    ? 'Live'
-                    : feed.status === 'needs_key'
-                    ? 'Needs Free Key'
-                    : 'Cached Baseline'}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {latestNiceFeed.length > 0 && (
-          <div className="pt-3 border-t border-[#E5E3DC]">
-            <h3 className="text-xs font-semibold text-[#1C1B18] mb-2">
-              Latest Pulled NICE Guidance Publications
-            </h3>
-            <ul className="space-y-1 text-xs text-[#57544D]">
-              {latestNiceFeed.slice(0, 4).map((item) => (
-                <li key={item.title} className="flex items-baseline justify-between gap-4">
-                  <span className="truncate">{item.title}</span>
-                  <span className="font-mono text-[#78756E] shrink-0">{item.pubDate.slice(0, 16)}</span>
-                </li>
-              ))}
-            </ul>
+        <div>
+          <div className="text-[#78756E]">CSV Exports</div>
+          <div className="font-mono text-lg font-semibold tabular-nums text-[#1E40AF]">
+            {analytics?.csvExports ?? '—'}
           </div>
-        )}
-      </section>
+        </div>
+        <div>
+          <div className="text-[#78756E]">Subscribers · Live Feeds</div>
+          <div className="font-mono text-lg font-semibold tabular-nums text-[#1C1B18]">
+            {newsletter?.totalSubscribers ?? 0} · {liveFeedCount}/{feeds.length}
+          </div>
+        </div>
+      </div>
 
-      {/* API Usage & Free-Tier Quota Limits */}
+      {/* Compact Page & Tile Update Status Table */}
       <section className="bg-white border border-[#E5E3DC] rounded-lg overflow-hidden">
-        <div className="px-6 py-4 border-b border-[#E5E3DC] flex flex-wrap items-baseline justify-between gap-2">
-          <div>
-            <h2 className="text-base font-semibold text-[#1C1B18]">
-              API Usage & Quota Limits to Watch
-            </h2>
-            <p className="text-xs text-[#78756E] mt-0.5">
-              Tracks actual calls sent by this server per month alongside strict provider caps.
-            </p>
-          </div>
-          <span className="text-xs font-mono text-[#78756E]">
-            Month: {new Date().toISOString().slice(0, 7)}
+        <div className="px-4 py-2.5 border-b border-[#E5E3DC] flex items-center justify-between gap-2 bg-[#F3F2EE]">
+          <h2 className="text-xs font-semibold text-[#1C1B18]">Page &amp; Tile Update Status</h2>
+          <span className="text-[11px] font-mono text-[#78756E]">
+            {tileRows.filter((r) => r.isOk).length}/{tileRows.length} healthy
           </span>
         </div>
 
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-xs">
             <thead>
-              <tr className="bg-[#F3F2EE] border-b border-[#E5E3DC] font-medium text-[#57544D]">
-                <th className="py-3 px-5">API / Feed</th>
-                <th className="py-3 px-4 text-right">Calls (Month)</th>
-                <th className="py-3 px-4 text-right">Calls (Total)</th>
-                <th className="py-3 px-4">Free-Tier Limit</th>
-                <th className="py-3 px-4">Active Guardrail</th>
-                <th className="py-3 px-5">Quota Risk</th>
+              <tr className="border-b border-[#E5E3DC] text-[#57544D] font-medium">
+                <th className="py-2 px-4">Page</th>
+                <th className="py-2 px-3">Tile</th>
+                <th className="py-2 px-3">Updated</th>
+                <th className="py-2 px-3">Cadence</th>
+                <th className="py-2 px-3">Source</th>
+                <th className="py-2 px-4 text-right">Status</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-[#E5E3DC]">
-              {apiUsage.map((item) => (
-                <tr key={item.provider} className="hover:bg-[#FAF9F6]">
-                  <td className="py-3 px-5 font-medium text-[#1C1B18]">{item.provider}</td>
-                  <td className="py-3 px-4 text-right font-mono tabular-nums text-[#1C1B18]">
-                    {item.callsThisMonth}
+              {tileRows.map((row) => (
+                <tr key={`${row.page}-${row.tile}`} className="hover:bg-[#FAF9F6]">
+                  <td className="py-2 px-4 font-medium text-[#1C1B18] whitespace-nowrap">
+                    {row.page}
                   </td>
-                  <td className="py-3 px-4 text-right font-mono tabular-nums text-[#78756E]">
-                    {item.callsTotal}
+                  <td className="py-2 px-3 text-[#1C1B18]">{row.tile}</td>
+                  <td className="py-2 px-3 font-mono tabular-nums text-[#57544D] whitespace-nowrap">
+                    {row.updated}
                   </td>
-                  <td className="py-3 px-4 font-mono text-[#57544D]">{item.quotaLimit}</td>
-                  <td className="py-3 px-4 text-[#57544D]">{item.guardNote}</td>
-                  <td className="py-3 px-5 whitespace-nowrap font-medium">
-                    <span
-                      className={
-                        item.riskLevel === 'strict'
-                          ? 'text-[#B91C1C]'
-                          : item.riskLevel === 'watch'
-                          ? 'text-[#B45309]'
-                          : 'text-[#15803D]'
-                      }
-                    >
-                      {item.riskLevel === 'strict'
-                        ? 'Strict Cap'
-                        : item.riskLevel === 'watch'
-                        ? 'Watch Cap'
-                        : 'Safe'}
-                    </span>
+                  <td className="py-2 px-3 font-mono text-[#78756E] whitespace-nowrap">
+                    {row.cadence}
+                  </td>
+                  <td className="py-2 px-3 text-[#57544D]">{row.source}</td>
+                  <td className="py-2 px-4 text-right whitespace-nowrap">
+                    {row.isOk ? (
+                      <span
+                        title="Healthy"
+                        className="inline-flex items-center gap-1 font-medium text-[#15803D]"
+                      >
+                        <Check className="w-4 h-4" />
+                        <span>OK</span>
+                      </span>
+                    ) : (
+                      <span
+                        title={row.statusLabel}
+                        className="inline-flex items-center gap-1 font-medium text-[#B91C1C]"
+                      >
+                        <XCircle className="w-4 h-4" />
+                        <span>{row.statusLabel}</span>
+                      </span>
+                    )}
                   </td>
                 </tr>
               ))}
@@ -641,30 +437,226 @@ export const AnalyticsAndPipelineView: React.FC<AnalyticsAndPipelineViewProps> =
         </div>
       </section>
 
-      {/* GitHub Actions Daily Refresh */}
-      <section className="bg-white border border-[#E5E3DC] rounded-lg overflow-hidden">
-        <div className="px-6 py-4 border-b border-[#E5E3DC] flex flex-wrap items-center justify-between gap-3 bg-[#F3F2EE]">
-          <div>
-            <h2 className="text-sm font-semibold text-[#1C1B18]">
-              Hands-Off GitHub Actions Daily Refresh (.github/workflows/daily-sync.yml)
-            </h2>
-            <p className="text-xs text-[#57544D]">
-              Uses public Greenhouse ATS boards, OpenPrescribing, NICE RSS, and optional free REED_API_KEY (no credit card).
-            </p>
+      {/* Minimised Collapsible Panels (zero scrolling until clicked) */}
+      <div className="space-y-2">
+        <details className="group bg-white border border-[#E5E3DC] rounded-lg overflow-hidden">
+          <summary className="px-4 py-2.5 flex items-center justify-between gap-3 cursor-pointer select-none hover:bg-[#FAF9F6] text-xs font-medium text-[#1C1B18]">
+            <span className="inline-flex items-center gap-2">
+              <ChevronRight className="w-3.5 h-3.5 text-[#78756E] transition-transform group-open:rotate-90" />
+              UK Data Feeds ({liveFeedCount} Live / {feeds.length} Total)
+            </span>
+            <span className="font-mono text-[11px] text-[#78756E]">
+              {feeds.reduce((acc, f) => acc + f.recordsFetched, 0)} live records
+            </span>
+          </summary>
+          <div className="px-4 pb-3 pt-1 border-t border-[#E5E3DC] divide-y divide-[#E5E3DC] text-xs">
+            {feeds.map((feed) => (
+              <div key={feed.source} className="py-2 flex items-center justify-between gap-3">
+                <div>
+                  <div className="font-medium text-[#1C1B18]">{feed.source}</div>
+                  <div className="text-[#57544D]">{feed.note}</div>
+                </div>
+                <span
+                  className={`shrink-0 font-mono font-medium ${
+                    feed.status === 'live'
+                      ? 'text-[#15803D]'
+                      : feed.status === 'needs_key'
+                      ? 'text-[#B91C1C]'
+                      : 'text-[#B45309]'
+                  }`}
+                >
+                  {feed.recordsFetched} · {feed.status}
+                </span>
+              </div>
+            ))}
+            {latestNiceFeed.length > 0 && (
+              <div className="pt-2 text-[#57544D]">
+                <span className="font-medium text-[#1C1B18]">Latest NICE TAs:</span>{' '}
+                {latestNiceFeed
+                  .slice(0, 3)
+                  .map((i) => i.title)
+                  .join(' · ')}
+              </div>
+            )}
           </div>
-          <button
-            type="button"
-            onClick={handleCopy}
-            className="inline-flex items-center gap-2 px-3 py-2 text-xs font-medium bg-white border border-[#D6D3CB] rounded-md text-[#1C1B18] hover:bg-[#FAF9F6] cursor-pointer"
-          >
-            {copied ? <Check className="w-4 h-4 text-[#15803D]" /> : <Copy className="w-4 h-4" />}
-            {copied ? 'Copied' : 'Copy YAML'}
-          </button>
-        </div>
-        <pre className="p-6 text-xs font-mono text-[#1C1B18] bg-white overflow-x-auto leading-relaxed">
-          {GITHUB_WORKFLOW_SNIPPET}
-        </pre>
-      </section>
+        </details>
+
+        <details className="group bg-white border border-[#E5E3DC] rounded-lg overflow-hidden">
+          <summary className="px-4 py-2.5 flex items-center justify-between gap-3 cursor-pointer select-none hover:bg-[#FAF9F6] text-xs font-medium text-[#1C1B18]">
+            <span className="inline-flex items-center gap-2">
+              <ChevronRight className="w-3.5 h-3.5 text-[#78756E] transition-transform group-open:rotate-90" />
+              API Usage &amp; Quota Limits to Watch ({apiUsage.length} Providers)
+            </span>
+            <span className="font-mono text-[11px] text-[#78756E]">
+              Month: {new Date().toISOString().slice(0, 7)}
+            </span>
+          </summary>
+          <div className="border-t border-[#E5E3DC] overflow-x-auto">
+            <table className="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr className="bg-[#F3F2EE] border-b border-[#E5E3DC] text-[#57544D]">
+                  <th className="py-2 px-4">Provider</th>
+                  <th className="py-2 px-3 text-right">Month</th>
+                  <th className="py-2 px-3 text-right">Total</th>
+                  <th className="py-2 px-3">Limit</th>
+                  <th className="py-2 px-3">Guardrail</th>
+                  <th className="py-2 px-4 text-right">Risk</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-[#E5E3DC]">
+                {apiUsage.map((item) => (
+                  <tr key={item.provider}>
+                    <td className="py-2 px-4 font-medium text-[#1C1B18]">{item.provider}</td>
+                    <td className="py-2 px-3 text-right font-mono tabular-nums">
+                      {item.callsThisMonth}
+                    </td>
+                    <td className="py-2 px-3 text-right font-mono tabular-nums text-[#78756E]">
+                      {item.callsTotal}
+                    </td>
+                    <td className="py-2 px-3 font-mono text-[#57544D]">{item.quotaLimit}</td>
+                    <td className="py-2 px-3 text-[#57544D]">{item.guardNote}</td>
+                    <td
+                      className={`py-2 px-4 text-right font-medium ${
+                        item.riskLevel === 'strict'
+                          ? 'text-[#B91C1C]'
+                          : item.riskLevel === 'watch'
+                          ? 'text-[#B45309]'
+                          : 'text-[#15803D]'
+                      }`}
+                    >
+                      {item.riskLevel === 'strict'
+                        ? 'Strict'
+                        : item.riskLevel === 'watch'
+                        ? 'Watch'
+                        : 'Safe'}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details className="group bg-white border border-[#E5E3DC] rounded-lg overflow-hidden">
+          <summary className="px-4 py-2.5 flex items-center justify-between gap-3 cursor-pointer select-none hover:bg-[#FAF9F6] text-xs font-medium text-[#1C1B18]">
+            <span className="inline-flex items-center gap-2">
+              <ChevronRight className="w-3.5 h-3.5 text-[#78756E] transition-transform group-open:rotate-90" />
+              Visitor Breakdown (Tools, Top Clusters &amp; Drugs)
+            </span>
+            <span className="font-mono text-[11px] text-[#78756E]">
+              {analytics?.totalEvents ?? 0} interactions
+            </span>
+          </summary>
+          <div className="px-4 py-3 border-t border-[#E5E3DC] grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+            <div>
+              <h3 className="font-medium text-[#1C1B18] mb-1.5">Views by Tool</h3>
+              {analytics &&
+                Object.entries(analytics.viewsByModule).map(([mod, views]) => (
+                  <div key={mod} className="flex justify-between py-1 border-b border-[#EFECE5]">
+                    <span className="text-[#57544D]">{mod}</span>
+                    <span className="font-mono tabular-nums">{views}</span>
+                  </div>
+                ))}
+            </div>
+            <div>
+              <h3 className="font-medium text-[#1C1B18] mb-1.5">Most Inspected Clusters</h3>
+              {analytics?.topClusters.length ? (
+                analytics.topClusters.map((c) => (
+                  <div key={c.name} className="flex justify-between py-1 border-b border-[#EFECE5]">
+                    <span className="text-[#57544D]">{c.name}</span>
+                    <span className="font-mono tabular-nums">{c.clicks}</span>
+                  </div>
+                ))
+              ) : (
+                <p className="text-[#78756E]">None recorded yet.</p>
+              )}
+            </div>
+            <div>
+              <h3 className="font-medium text-[#1C1B18] mb-1.5">Most Inspected Drugs</h3>
+              {analytics?.topDrugs.length ? (
+                analytics.topDrugs.map((d) => (
+                  <div key={d.name} className="flex justify-between py-1 border-b border-[#EFECE5]">
+                    <span className="text-[#57544D] truncate pr-2">{d.name}</span>
+                    <span className="font-mono tabular-nums">{d.clicks}</span>
+                  </div>
+                ))
+              ) : (
+                <p className="text-[#78756E]">None recorded yet.</p>
+              )}
+            </div>
+          </div>
+        </details>
+
+        <details className="group bg-white border border-[#E5E3DC] rounded-lg overflow-hidden">
+          <summary className="px-4 py-2.5 flex items-center justify-between gap-3 cursor-pointer select-none hover:bg-[#FAF9F6] text-xs font-medium text-[#1C1B18]">
+            <span className="inline-flex items-center gap-2">
+              <ChevronRight className="w-3.5 h-3.5 text-[#78756E] transition-transform group-open:rotate-90" />
+              Newsletter Subscribers ({newsletter?.totalSubscribers ?? 0})
+            </span>
+            <span className="font-mono text-[11px] text-[#78756E]">
+              Jobs: {newsletter?.byTrack.jobs ?? 0} · NICE: {newsletter?.byTrack['nice-nhs'] ?? 0} · Both:{' '}
+              {newsletter?.byTrack.both ?? 0}
+            </span>
+          </summary>
+          <div className="px-4 py-3 border-t border-[#E5E3DC] space-y-2 text-xs">
+            {newsletter && newsletter.subscribers.length > 0 ? (
+              <>
+                <button
+                  type="button"
+                  onClick={() =>
+                    downloadCsv(
+                      'boundry-newsletter-subscribers.csv',
+                      ['Email', 'Track', 'Subscribed At'],
+                      newsletter.subscribers.map((s) => [s.email, s.track, s.subscribedAt])
+                    )
+                  }
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 border border-[#D6D3CB] rounded text-[#1C1B18] hover:bg-[#FAF9F6] cursor-pointer"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  Export CSV
+                </button>
+                <div className="divide-y divide-[#E5E3DC]">
+                  {newsletter.subscribers.map((sub) => (
+                    <div key={sub.email} className="py-1.5 flex justify-between gap-3">
+                      <span className="font-medium text-[#1C1B18]">{sub.email}</span>
+                      <span className="font-mono text-[#78756E]">
+                        {sub.track} · {sub.subscribedAt.slice(0, 10)}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <p className="text-[#78756E]">No newsletter subscribers yet.</p>
+            )}
+          </div>
+        </details>
+
+        <details className="group bg-white border border-[#E5E3DC] rounded-lg overflow-hidden">
+          <summary className="px-4 py-2.5 flex items-center justify-between gap-3 cursor-pointer select-none hover:bg-[#FAF9F6] text-xs font-medium text-[#1C1B18]">
+            <span className="inline-flex items-center gap-2">
+              <ChevronRight className="w-3.5 h-3.5 text-[#78756E] transition-transform group-open:rotate-90" />
+              GitHub Actions Daily Sync YAML (boundry.space)
+            </span>
+            <span className="font-mono text-[11px] text-[#78756E]">06:00 UTC</span>
+          </summary>
+          <div className="border-t border-[#E5E3DC]">
+            <div className="px-4 py-2 bg-[#F3F2EE] flex justify-end">
+              <button
+                type="button"
+                onClick={handleCopy}
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium bg-white border border-[#D6D3CB] rounded text-[#1C1B18] cursor-pointer"
+              >
+                {copied ? <Check className="w-3.5 h-3.5 text-[#15803D]" /> : <Copy className="w-3.5 h-3.5" />}
+                {copied ? 'Copied' : 'Copy YAML'}
+              </button>
+            </div>
+            <pre className="p-4 text-[11px] font-mono text-[#1C1B18] bg-white overflow-x-auto leading-relaxed">
+              {GITHUB_WORKFLOW_SNIPPET}
+            </pre>
+          </div>
+        </details>
+      </div>
     </div>
   );
 };

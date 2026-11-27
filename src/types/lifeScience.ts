@@ -56,7 +56,8 @@ export interface JobVacancy {
     | 'Reed Science'
     | 'Jooble UK'
     | 'Google Jobs (LinkedIn)'
-    | 'Direct Career Page';
+    | 'Direct Career Page'
+    | 'NHS Jobs UK';
   applyUrl?: string;
   summary: string;
 }

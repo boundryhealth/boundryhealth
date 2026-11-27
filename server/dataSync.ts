@@ -90,17 +90,24 @@ const PROVIDER_META: {
     riskLevel: 'watch',
   },
   {
-    key: 'openprescribing',
-    provider: 'OpenPrescribing.net NHS API',
+    key: 'nhsjobs',
+    provider: 'NHS Jobs Official UK XML API',
     quotaLimit: 'Unlimited · No Key',
-    guardNote: '5 BNF codes per 24h sync (monthly NHSBSA updates)',
+    guardNote: '4 R&D / Genomics / Biomedical queries every 24h',
+    riskLevel: 'safe',
+  },
+  {
+    key: 'openprescribing',
+    provider: 'NHSBSA English Prescribing Dataset API',
+    quotaLimit: 'Unlimited · No Key',
+    guardNote: '1 metadata + 1 SQL call per 24h sync (monthly NHSBSA EPD)',
     riskLevel: 'safe',
   },
   {
     key: 'nice',
-    provider: 'NICE Published Guidance RSS',
+    provider: 'NICE Technology Appraisals Feed',
     quotaLimit: 'Unlimited · No Key',
-    guardNote: '1 RSS request per 24h sync',
+    guardNote: '1 request per 24h sync',
     riskLevel: 'safe',
   },
 ];
@@ -152,13 +159,13 @@ function recordProviderCalls(increments: Record<string, number>): ApiUsageItem[]
   return buildApiUsageList(usage);
 }
 
-// BNF chemical codes for OpenPrescribing.net live primary-care NHS England API (zero key)
-const OPENPRESCRIBING_BNF_MAP: Record<string, { drugId: string; label: string }> = {
+// Verified BNF chemical substance codes in NHSBSA English Prescribing Dataset (zero key)
+const NHSBSA_BNF_MAP: Record<string, { drugId: string; label: string }> = {
   '0601023AW': { drugId: 'nice-ta875', label: 'Semaglutide' },
-  '0212000AC': { drugId: 'nice-ta733', label: 'Inclisiran' },
-  '0601023AX': { drugId: 'nice-ta775', label: 'Dapagliflozin' },
-  '0407042D0': { drugId: 'nice-ta945', label: 'Rimegepant' },
-  '0601023AY': { drugId: 'nice-ta1026', label: 'Tirzepatide' },
+  '0212000AM': { drugId: 'nice-ta733', label: 'Inclisiran' },
+  '0601023AG': { drugId: 'nice-ta775', label: 'Dapagliflozin' },
+  '0407041AD': { drugId: 'nice-ta945', label: 'Rimegepant' },
+  '0601023AZ': { drugId: 'nice-ta1026', label: 'Tirzepatide' },
 };
 
 // Public unauthenticated Greenhouse ATS boards of UK-active life science employers (same feeds syndicated to LinkedIn)
@@ -325,39 +332,81 @@ async function fetchOpenPrescribingLive(): Promise<{
   const enrichments: Record<string, { latestQuarter: string; monthlyItemsK: number; monthlyCostGbpM: number }> = {};
   let successCount = 0;
   let callsMade = 0;
+  let datasetLabel = 'EPD';
 
-  for (const [bnfCode, meta] of Object.entries(OPENPRESCRIBING_BNF_MAP)) {
-    try {
-      const url = `https://openprescribing.net/api/1.0/spending/?code=${encodeURIComponent(bnfCode)}&format=json`;
-      callsMade += 1;
-      const res = await fetchWithTimeout(url);
-      if (!res.ok) continue;
-      const rows = (await res.json()) as Array<{ date: string; items: number; actual_cost: number }>;
-      if (Array.isArray(rows) && rows.length > 0) {
-        const latest = rows[rows.length - 1];
-        const recent12 = rows.slice(-12);
-        const annualSpendM = recent12.reduce((acc, r) => acc + (Number(r.actual_cost) || 0), 0) / 1_000_000;
-        enrichments[meta.drugId] = {
-          latestQuarter: latest.date,
-          monthlyItemsK: Number(((Number(latest.items) || 0) / 1000).toFixed(1)),
-          monthlyCostGbpM: Number(annualSpendM.toFixed(1)),
-        };
-        successCount += 1;
+  try {
+    callsMade += 1;
+    const pkgRes = await fetchWithTimeout(
+      'https://opendata.nhsbsa.net/api/3/action/package_show?id=english-prescribing-data-epd',
+      {},
+      9000
+    );
+    if (pkgRes.ok) {
+      const pkg = (await pkgRes.json()) as {
+        result?: { resources?: Array<{ id?: string; name?: string }> };
+      };
+      const epdResources = (pkg.result?.resources ?? []).filter((r) =>
+        /^EPD_\d{6}$/.test(r.name ?? '')
+      );
+      const latest = epdResources[epdResources.length - 1];
+      if (latest?.id && latest?.name) {
+        datasetLabel = latest.name;
+        const codesSql = Object.keys(NHSBSA_BNF_MAP)
+          .map((c) => `'${c}'`)
+          .join(',');
+        const sql = `SELECT BNF_CHEMICAL_SUBSTANCE, SUM(ITEMS) AS items, SUM(ACTUAL_COST) AS cost FROM \`${latest.id}\` WHERE BNF_CHEMICAL_SUBSTANCE IN (${codesSql}) GROUP BY BNF_CHEMICAL_SUBSTANCE`;
+        callsMade += 1;
+        const sqlRes = await fetchWithTimeout(
+          `https://opendata.nhsbsa.net/api/3/action/datastore_search_sql?resource_id=${encodeURIComponent(
+            latest.id
+          )}&sql=${encodeURIComponent(sql)}`,
+          {},
+          9000
+        );
+        if (sqlRes.ok) {
+          const sqlJson = (await sqlRes.json()) as {
+            result?: {
+              result?: {
+                records?: Array<{
+                  BNF_CHEMICAL_SUBSTANCE?: string;
+                  items?: number;
+                  cost?: number;
+                }>;
+              };
+            };
+          };
+          const records = sqlJson.result?.result?.records ?? [];
+          for (const row of records) {
+            const code = row.BNF_CHEMICAL_SUBSTANCE ?? '';
+            const meta = NHSBSA_BNF_MAP[code];
+            if (!meta) continue;
+            const monthlyItems = Number(row.items) || 0;
+            const monthlyCost = Number(row.cost) || 0;
+            // Annualised primary-care run-rate in GBP millions from latest NHSBSA month
+            const annualSpendM = Number(((monthlyCost * 12) / 1_000_000).toFixed(1));
+            enrichments[meta.drugId] = {
+              latestQuarter: datasetLabel,
+              monthlyItemsK: Number((monthlyItems / 1000).toFixed(1)),
+              monthlyCostGbpM: annualSpendM,
+            };
+            successCount += 1;
+          }
+        }
       }
-    } catch {
-      // Skip individual code failure
     }
+  } catch {
+    // Non-blocking fallback to baseline
   }
 
   return {
     feed: {
-      source: 'OpenPrescribing.net NHS API (Monthly · No Key)',
+      source: 'NHSBSA English Prescribing Dataset API (Monthly · No Key)',
       status: successCount > 0 ? 'live' : 'cached',
       lastSyncedAt: nowIso,
       recordsFetched: successCount,
       note:
         successCount > 0
-          ? `Synced ${successCount} BNF primary-care drug trajectories from NHS England OpenPrescribing.`
+          ? `Synced ${successCount} primary-care NHS drug trajectories from official NHSBSA ${datasetLabel}.`
           : 'Using verified cached NHSBSA baseline.',
     },
     callsMade,
@@ -368,31 +417,62 @@ async function fetchOpenPrescribingLive(): Promise<{
 async function fetchNiceGuidanceFeed(): Promise<{ feed: LiveFeedStatus; callsMade: number; items: LiveNiceGuidanceItem[] }> {
   const nowIso = new Date().toISOString();
   try {
-    const res = await fetchWithTimeout('https://www.nice.org.uk/guidance/published/rss');
+    const res = await fetchWithTimeout(
+      'https://www.nice.org.uk/guidance/published?ndt=Guidance&ngt=Technology+appraisal+guidance&sp=on',
+      {
+        headers: {
+          Accept: 'text/html,application/xhtml+xml',
+        },
+      },
+      9000
+    );
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const xml = await res.text();
-    const itemMatches = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].slice(0, 8);
-    const items: LiveNiceGuidanceItem[] = itemMatches.map((m) => {
-      const block = m[1];
-      const title = (
-        block.match(/<title><!\[CDATA\[(.*?)\]\]><\/title>/)?.[1] ??
-        block.match(/<title>(.*?)<\/title>/)?.[1] ??
-        'NICE Guidance Update'
-      ).trim();
-      const link = sanitizeHttpUrl(block.match(/<link>(.*?)<\/link>/)?.[1]?.trim()) ?? 'https://www.nice.org.uk/guidance';
-      const pubDate = (block.match(/<pubDate>(.*?)<\/pubDate>/)?.[1] ?? nowIso).trim();
-      return { title, link, pubDate };
-    });
+    const html = await res.text();
+    const match = html.match(/<script id="__NEXT_DATA__" type="application\/json">([\s\S]*?)<\/script>/);
+    const items: LiveNiceGuidanceItem[] = [];
+
+    if (match?.[1]) {
+      const nextData = JSON.parse(match[1]) as {
+        props?: {
+          pageProps?: {
+            results?: {
+              documents?: Array<{
+                guidanceRef?: string;
+                title?: string;
+                url?: string;
+                pathAndQuery?: string;
+                publicationDate?: string;
+              }>;
+            };
+          };
+        };
+      };
+      const docs = [...(nextData.props?.pageProps?.results?.documents ?? [])].sort((a, b) =>
+        (b.publicationDate ?? '').localeCompare(a.publicationDate ?? '')
+      );
+      for (const doc of docs.slice(0, 8)) {
+        if (!doc.title) continue;
+        const refPrefix = doc.guidanceRef ? `${doc.guidanceRef}: ` : '';
+        const cleanUrl =
+          sanitizeHttpUrl(doc.url) ??
+          (doc.pathAndQuery ? `https://www.nice.org.uk${doc.pathAndQuery}` : 'https://www.nice.org.uk/guidance');
+        items.push({
+          title: `${refPrefix}${doc.title.trim()}`,
+          link: cleanUrl,
+          pubDate: (doc.publicationDate ?? nowIso).slice(0, 10),
+        });
+      }
+    }
 
     return {
       feed: {
-        source: 'NICE Published Guidance RSS (Daily · No Key)',
+        source: 'NICE Technology Appraisals Feed (Daily · No Key)',
         status: items.length > 0 ? 'live' : 'cached',
         lastSyncedAt: nowIso,
         recordsFetched: items.length,
         note:
           items.length > 0
-            ? `Fetched ${items.length} latest NICE guidance publications.`
+            ? `Fetched ${items.length} latest published NICE Technology Appraisals.`
             : 'Using verified NICE TA baseline.',
       },
       callsMade: 1,
@@ -401,7 +481,7 @@ async function fetchNiceGuidanceFeed(): Promise<{ feed: LiveFeedStatus; callsMad
   } catch {
     return {
       feed: {
-        source: 'NICE Published Guidance RSS (Daily · No Key)',
+        source: 'NICE Technology Appraisals Feed (Daily · No Key)',
         status: 'cached',
         lastSyncedAt: nowIso,
         recordsFetched: 0,
@@ -623,6 +703,7 @@ async function fetchJoobleUkJobs(): Promise<{ feed: LiveFeedStatus; callsMade: n
   const jobs: JobVacancy[] = [];
   const seen = new Set<string>();
   let callsMade = 0;
+  let blocked403 = false;
 
   for (const kw of queries) {
     for (const page of ['1', '2']) {
@@ -634,6 +715,10 @@ async function fetchJoobleUkJobs(): Promise<{ feed: LiveFeedStatus; callsMade: n
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ keywords: kw, location: 'United Kingdom', page }),
         });
+        if (res.status === 403) {
+          blocked403 = true;
+          break;
+        }
         if (!res.ok) continue;
 
       const json = (await res.json()) as {
@@ -686,6 +771,7 @@ async function fetchJoobleUkJobs(): Promise<{ feed: LiveFeedStatus; callsMade: n
         // Continue across pages/queries
       }
     }
+    if (blocked403) break;
   }
 
   return {
@@ -697,7 +783,89 @@ async function fetchJoobleUkJobs(): Promise<{ feed: LiveFeedStatus; callsMade: n
       note:
         jobs.length > 0
           ? `Merged ${jobs.length} live UK openings from Jooble UK.`
+          : blocked403
+          ? 'Jooble blocked server IP with Cloudflare 403; Direct ATS, NHS Jobs & Reed cover UK roles.'
           : 'JOOBLE_API_KEY configured; awaiting reachable network response.',
+    },
+    callsMade,
+    jobs,
+  };
+}
+
+async function fetchNhsJobsUk(): Promise<{ feed: LiveFeedStatus; callsMade: number; jobs: JobVacancy[] }> {
+  const nowIso = new Date().toISOString();
+  const queries = ['biomedical scientist', 'clinical trial', 'bioinformatics', 'genomics'];
+  const jobs: JobVacancy[] = [];
+  const seen = new Set<string>();
+  let callsMade = 0;
+
+  const extractTag = (block: string, tag: string) =>
+    block.match(new RegExp(`<${tag}>([\\s\\S]*?)<\\/${tag}>`, 'i'))?.[1]?.trim() ?? '';
+
+  for (const kw of queries) {
+    try {
+      const url = `https://www.jobs.nhs.uk/api/v1/search_xml?keyword=${encodeURIComponent(kw)}`;
+      callsMade += 1;
+      const res = await fetchWithTimeout(url);
+      if (!res.ok) continue;
+      const xml = await res.text();
+      const blocks = [...xml.matchAll(/<vacancyDetails>([\s\S]*?)<\/vacancyDetails>/g)].slice(0, 15);
+
+      for (const m of blocks) {
+        const block = m[1];
+        const rawId = extractTag(block, 'id');
+        const title = extractTag(block, 'title');
+        if (!title) continue;
+        const id = `NHS-${rawId || Buffer.from(title).toString('base64').slice(0, 10)}`;
+        if (seen.has(id)) continue;
+        seen.add(id);
+
+        const employer = extractTag(block, 'employer') || 'NHS Trust / Healthcare Science';
+        const desc = extractTag(block, 'description').replace(/\s+/g, ' ').slice(0, 220);
+        const salaryText = extractTag(block, 'salary');
+        const salary = parseSalaryRangeGbp(salaryText);
+        const loc = extractTag(block, 'location') || 'United Kingdom';
+        const postDate = extractTag(block, 'postDate');
+        const postUrl = sanitizeHttpUrl(extractTag(block, 'url'));
+        const cluster = mapLocationToCluster(loc);
+        const postedMs = Date.parse(postDate || nowIso);
+        const daysOpen = Math.max(1, Math.round((Date.now() - postedMs) / (1000 * 60 * 60 * 24)));
+
+        jobs.push({
+          id,
+          title,
+          employer,
+          clusterId: cluster.id,
+          clusterName: cluster.name,
+          roleFamily: classifyRoleFamily(title, desc),
+          subSector: 'Research Inst.',
+          seniority: classifySeniority(title),
+          salaryMinGbp: salary.min,
+          salaryMaxGbp: salary.max,
+          daysOpen: Number.isFinite(daysOpen) ? Math.min(daysOpen, 90) : 7,
+          visaSponsorship: /visa|sponsorship|certificate of sponsorship/i.test(desc),
+          hybridPolicy: /remote/i.test(desc) ? 'Remote UK' : /hybrid/i.test(desc) ? 'Hybrid 3d' : 'On-site Lab',
+          skills: [kw],
+          postedSource: 'NHS Jobs UK',
+          applyUrl: postUrl,
+          summary: desc || `NHS Jobs listing in ${loc}.`,
+        });
+      }
+    } catch {
+      // Continue across queries
+    }
+  }
+
+  return {
+    feed: {
+      source: 'NHS Jobs Official UK XML API (Daily · No Key)',
+      status: jobs.length > 0 ? 'live' : 'cached',
+      lastSyncedAt: nowIso,
+      recordsFetched: jobs.length,
+      note:
+        jobs.length > 0
+          ? `Merged ${jobs.length} live UK NHS biomedical, clinical trial & genomics roles.`
+          : 'Using cached baseline.',
     },
     callsMade,
     jobs,
@@ -1120,14 +1288,21 @@ export function getCachedSnapshot(): SyncedMarketSnapshot {
           : 'Optional: set SERPAPI_API_KEY to pull LinkedIn & employer posts via Google Jobs UK.',
       },
       {
-        source: 'OpenPrescribing.net NHS API (Monthly · No Key)',
+        source: 'NHS Jobs Official UK XML API (Daily · No Key)',
         status: 'cached',
         lastSyncedAt: now.toISOString(),
         recordsFetched: 0,
         note: 'Baseline loaded; background refresh scheduled.',
       },
       {
-        source: 'NICE Published Guidance RSS (Daily · No Key)',
+        source: 'NHSBSA English Prescribing Dataset API (Monthly · No Key)',
+        status: 'cached',
+        lastSyncedAt: now.toISOString(),
+        recordsFetched: 0,
+        note: 'Baseline loaded; background refresh scheduled.',
+      },
+      {
+        source: 'NICE Technology Appraisals Feed (Daily · No Key)',
         status: 'cached',
         lastSyncedAt: now.toISOString(),
         recordsFetched: 0,
@@ -1153,11 +1328,12 @@ export async function runLiveSync(force = false): Promise<SyncedMarketSnapshot> 
   lastSyncAttemptMs = Date.now();
 
   try {
-    const [opResult, niceResult, atsResult, joobleResult, reedResult, adzunaResult, googleJobsResult] =
+    const [opResult, niceResult, atsResult, nhsJobsResult, joobleResult, reedResult, adzunaResult, googleJobsResult] =
       await Promise.all([
         fetchOpenPrescribingLive(),
         fetchNiceGuidanceFeed(),
         fetchDirectAtsFeeds(),
+        fetchNhsJobsUk(),
         fetchJoobleUkJobs(),
         fetchReedUkJobs(),
         fetchAdzunaUkJobs(force),
@@ -1166,6 +1342,7 @@ export async function runLiveSync(force = false): Promise<SyncedMarketSnapshot> 
 
     const apiUsage = recordProviderCalls({
       ats: atsResult.callsMade,
+      nhsjobs: nhsJobsResult.callsMade,
       jooble: joobleResult.callsMade,
       reed: reedResult.callsMade,
       adzuna: adzunaResult.callsMade,
@@ -1185,6 +1362,7 @@ export async function runLiveSync(force = false): Promise<SyncedMarketSnapshot> 
 
     const liveJobs = [
       ...atsResult.jobs,
+      ...nhsJobsResult.jobs,
       ...joobleResult.jobs,
       ...reedResult.jobs,
       ...adzunaResult.jobs,
@@ -1201,6 +1379,7 @@ export async function runLiveSync(force = false): Promise<SyncedMarketSnapshot> 
       nextScheduledSyncAt: next.toISOString(),
       feeds: [
         atsResult.feed,
+        nhsJobsResult.feed,
         joobleResult.feed,
         reedResult.feed,
         adzunaResult.feed,
