@@ -1,0 +1,6 @@
+{
+  "name": "Boundry UK — Life Science Cluster & NICE-to-NHS Intelligence",
+  "description": "Interactive UK life science job cluster bubble map, 2025-2035 meta market forecast hub, and NICE-to-NHS drug prescribing tracker.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,24 @@
+{
+  "totalViews": 1,
+  "totalEvents": 1,
+  "csvExports": 0,
+  "uniqueSessionHashes": [
+    "smoke_test"
+  ],
+  "viewsByModule": {
+    "clusters": 1,
+    "forecast": 0,
+    "nice-nhs": 0,
+    "guide": 0
+  },
+  "clusterClicks": {},
+  "drugClicks": {},
+  "daily": {
+    "2026-11-27": {
+      "date": "2026-11-27",
+      "views": 1,
+      "exports": 0
+    }
+  },
+  "lastUpdatedAt": "2026-11-27T12:06:26.992Z"
+}

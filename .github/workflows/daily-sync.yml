@@ -1,0 +1,44 @@
+name: Daily UK Life Science & NHS Data Sync
+
+on:
+  schedule:
+    - cron: '0 6 * * *' # Runs automatically every day at 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch Greenhouse/Lever ATS, Jooble UK, Reed UK, Google Jobs, OpenPrescribing & NICE RSS
+        env:
+          JOOBLE_API_KEY: ${{ secrets.JOOBLE_API_KEY }}
+          REED_API_KEY: ${{ secrets.REED_API_KEY }}
+          SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+          ENABLE_ADZUNA_IN_CI: ${{ secrets.ENABLE_ADZUNA_IN_CI }}
+        run: node scripts/sync-uk-data.mjs
+
+      - name: Build production bundle
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

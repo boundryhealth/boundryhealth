@@ -1,0 +1,19 @@
+{
+  "month": "2026-11",
+  "monthly": {
+    "ats": 42,
+    "jooble": 32,
+    "reed": 12,
+    "serpapi": 4,
+    "openprescribing": 15,
+    "nice": 3
+  },
+  "total": {
+    "ats": 42,
+    "jooble": 32,
+    "reed": 12,
+    "serpapi": 4,
+    "openprescribing": 15,
+    "nice": 3
+  }
+}
