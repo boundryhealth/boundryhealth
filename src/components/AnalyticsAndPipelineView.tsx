@@ -26,6 +26,7 @@ interface AnalyticsAndPipelineViewProps {
   feeds: LiveFeedStatus[];
   apiUsage: ApiUsageItem[];
   lastSyncAt: string;
+  nextScheduledSyncAt?: string;
   latestNiceFeed: LiveNiceGuidanceItem[];
   onRefreshSync: (token: string) => Promise<void>;
   onExitHiddenView: () => void;
@@ -68,6 +69,7 @@ export const AnalyticsAndPipelineView: React.FC<AnalyticsAndPipelineViewProps> =
   feeds,
   apiUsage,
   lastSyncAt,
+  nextScheduledSyncAt,
   latestNiceFeed,
   onRefreshSync,
   onExitHiddenView,
@@ -75,6 +77,7 @@ export const AnalyticsAndPipelineView: React.FC<AnalyticsAndPipelineViewProps> =
   // Bearer token held strictly in React memory (never persisted to localStorage/sessionStorage)
   const [ownerToken, setOwnerToken] = useState<string | null>(null);
   const [authStatus, setAuthStatus] = useState<{ needsSetup: boolean; envConfigured: boolean } | null>(null);
+  const [isStaticHost, setIsStaticHost] = useState(false);
   const [passcodeInput, setPasscodeInput] = useState('');
   const [authError, setAuthError] = useState<string | null>(null);
   const [authSubmitting, setAuthSubmitting] = useState(false);
@@ -86,9 +89,16 @@ export const AnalyticsAndPipelineView: React.FC<AnalyticsAndPipelineViewProps> =
 
   useEffect(() => {
     fetch('/api/owner/auth-status')
-      .then((res) => res.json())
-      .then((data: { needsSetup: boolean; envConfigured: boolean }) => setAuthStatus(data))
-      .catch(() => setAuthError('Unable to reach backend authentication service.'));
+      .then(async (res) => {
+        const ct = res.headers.get('content-type') || '';
+        if (!res.ok || !ct.includes('application/json')) {
+          setIsStaticHost(true);
+          return;
+        }
+        const data = (await res.json()) as { needsSetup: boolean; envConfigured: boolean };
+        setAuthStatus(data);
+      })
+      .catch(() => setIsStaticHost(true));
   }, []);
 
   const loadAnalytics = async (token: string) => {
@@ -162,6 +172,78 @@ export const AnalyticsAndPipelineView: React.FC<AnalyticsAndPipelineViewProps> =
     setTimeout(() => setCopied(false), 1800);
   };
 
+  const formatTs = (iso?: string) => {
+    if (!iso) return 'Not yet synced';
+    const d = new Date(iso);
+    return Number.isNaN(d.getTime()) ? iso : d.toLocaleString('en-GB');
+  };
+
+  const formatCountdown = (iso?: string) => {
+    if (!iso) return 'Scheduled 06:00 UTC';
+    const targetMs = Date.parse(iso);
+    if (!Number.isFinite(targetMs)) return 'Scheduled 06:00 UTC';
+    const diffMs = targetMs - Date.now();
+    if (diffMs <= 0) return 'Due now';
+    const hours = Math.floor(diffMs / (1000 * 60 * 60));
+    const mins = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+    return `in ${hours}h ${mins}m`;
+  };
+
+  if (isStaticHost) {
+    return (
+      <div className="max-w-lg mx-auto my-8 bg-white border border-[#E5E3DC] rounded-lg p-6 space-y-4">
+        <div className="flex items-start justify-between gap-4 pb-3 border-b border-[#E5E3DC]">
+          <div>
+            <div className="text-xs font-mono text-[#78756E]">Static GitHub Pages · boundry.space</div>
+            <h1 className="text-lg font-semibold text-[#1C1B18] mt-1">
+              Owner Analytics Requires Node Host
+            </h1>
+          </div>
+          <Lock className="w-4 h-4 text-[#78756E] shrink-0 mt-1" />
+        </div>
+
+        <div className="grid grid-cols-2 gap-3 bg-[#FAF9F6] border border-[#E5E3DC] rounded-md p-3 text-xs">
+          <div>
+            <div className="text-[#78756E]">Latest Refresh</div>
+            <div className="mt-0.5 font-mono font-medium text-[#1C1B18]">
+              {formatTs(lastSyncAt)}
+            </div>
+          </div>
+          <div>
+            <div className="text-[#78756E]">Next Refresh Due</div>
+            <div className="mt-0.5 font-mono font-medium text-[#1E40AF]">
+              {formatTs(nextScheduledSyncAt)} ({formatCountdown(nextScheduledSyncAt)})
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-2 text-xs text-[#57544D] leading-relaxed">
+          <p>
+            GitHub Pages serves static files only, so passcode login, visitor counters, and live
+            newsletter exports cannot run directly on static GitHub Pages.
+          </p>
+          <p>
+            To unlock live Owner Analytics right now, open your Node-hosted server URL at{' '}
+            <span className="font-mono text-[#1C1B18]">/#/owner-analytics</span>, or deploy this
+            repo on a Node host (Render / Railway / Fly.io running{' '}
+            <span className="font-mono text-[#1C1B18]">npm start</span>) and point{' '}
+            <span className="font-mono text-[#1C1B18]">boundry.space</span> there.
+          </p>
+        </div>
+
+        <div className="pt-1 flex justify-end">
+          <button
+            type="button"
+            onClick={onExitHiddenView}
+            className="px-4 py-2 text-xs font-medium bg-[#1C1B18] text-white rounded-md hover:bg-[#3E3C37] cursor-pointer"
+          >
+            Back to Public Site
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   if (!ownerToken) {
     return (
       <div className="max-w-md mx-auto my-12 bg-white border border-[#E5E3DC] rounded-lg p-6 space-y-5">
@@ -229,12 +311,6 @@ export const AnalyticsAndPipelineView: React.FC<AnalyticsAndPipelineViewProps> =
       </div>
     );
   }
-
-  const formatTs = (iso?: string) => {
-    if (!iso) return 'Not yet synced';
-    const d = new Date(iso);
-    return Number.isNaN(d.getTime()) ? iso : d.toLocaleString('en-GB');
-  };
 
   const niceFeed = feeds.find((f) => f.source.includes('NICE'));
   const opFeed = feeds.find(
@@ -325,7 +401,7 @@ export const AnalyticsAndPipelineView: React.FC<AnalyticsAndPipelineViewProps> =
             Owner Analytics &amp; Sync Console
           </h1>
           <p className="text-xs font-mono text-[#78756E]">
-            boundry.space · Last sync: {formatTs(lastSyncAt)}
+            Latest refresh: {formatTs(lastSyncAt)} · Next refresh due: {formatTs(nextScheduledSyncAt)} ({formatCountdown(nextScheduledSyncAt)})
           </p>
         </div>
         <div className="flex items-center gap-2 shrink-0">

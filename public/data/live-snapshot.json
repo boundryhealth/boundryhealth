@@ -1,60 +1,60 @@
 {
-  "lastSyncAt": "2026-11-27T14:31:23.510Z",
-  "nextScheduledSyncAt": "2026-11-28T14:31:23.510Z",
+  "lastSyncAt": "2026-11-27T15:00:55.386Z",
+  "nextScheduledSyncAt": "2026-11-28T15:00:55.386Z",
   "feeds": [
     {
       "source": "Direct UK Biotech ATS Feeds (Greenhouse + Lever + Ashby · No Key)",
       "status": "live",
-      "lastSyncedAt": "2026-11-27T14:31:21.063Z",
+      "lastSyncedAt": "2026-11-27T15:00:51.966Z",
       "recordsFetched": 52,
       "note": "Synced 52 direct UK biotech openings (Greenhouse, Lever & Ashby boards)."
     },
     {
       "source": "NHS Jobs Official UK XML API (Daily · No Key)",
       "status": "live",
-      "lastSyncedAt": "2026-11-27T14:31:21.064Z",
+      "lastSyncedAt": "2026-11-27T15:00:51.967Z",
       "recordsFetched": 31,
       "note": "Merged 31 live UK NHS biomedical, clinical trial & genomics roles."
     },
     {
       "source": "Jooble UK Life Science API",
       "status": "cached",
-      "lastSyncedAt": "2026-11-27T14:31:21.066Z",
+      "lastSyncedAt": "2026-11-27T15:00:51.969Z",
       "recordsFetched": 0,
       "note": "Jooble blocked server IP with Cloudflare 403; Direct ATS, NHS Jobs & Reed cover UK roles."
     },
     {
       "source": "Reed.co.uk UK API (Free · No Card)",
       "status": "live",
-      "lastSyncedAt": "2026-11-27T14:31:21.068Z",
+      "lastSyncedAt": "2026-11-27T15:00:51.971Z",
       "recordsFetched": 305,
       "note": "Merged 305 live UK science roles from Reed.co.uk."
     },
     {
       "source": "Adzuna UK Life Science API (25 Test Calls Limit)",
       "status": "live",
-      "lastSyncedAt": "2026-11-27T14:31:21.069Z",
+      "lastSyncedAt": "2026-11-27T15:00:51.973Z",
       "recordsFetched": 50,
       "note": "Merged 50 live UK roles using 1 Adzuna test call (cached 7 days)."
     },
     {
       "source": "Google Jobs UK / LinkedIn Index (SerpAPI)",
       "status": "live",
-      "lastSyncedAt": "2026-11-27T14:31:21.071Z",
+      "lastSyncedAt": "2026-11-27T15:00:51.974Z",
       "recordsFetched": 14,
       "note": "Merged 14 live UK roles from Google Jobs (including LinkedIn-indexed posts)."
     },
     {
       "source": "NHSBSA English Prescribing Dataset API (Monthly · No Key)",
       "status": "live",
-      "lastSyncedAt": "2026-11-27T14:31:21.050Z",
+      "lastSyncedAt": "2026-11-27T15:00:51.952Z",
       "recordsFetched": 5,
       "note": "Synced 5 primary-care NHS drug trajectories from official NHSBSA EPD_202506."
     },
     {
       "source": "NICE Technology Appraisals Feed (Daily · No Key)",
       "status": "live",
-      "lastSyncedAt": "2026-11-27T14:31:21.061Z",
+      "lastSyncedAt": "2026-11-27T15:00:51.964Z",
       "recordsFetched": 8,
       "note": "Fetched 8 latest published NICE Technology Appraisals."
     }
@@ -70,8 +70,8 @@
     },
     {
       "provider": "Jooble UK Life Science API",
-      "callsThisMonth": 49,
-      "callsTotal": 49,
+      "callsThisMonth": 34,
+      "callsTotal": 34,
       "quotaLimit": "Free tier (~500 calls/day)",
       "guardNote": "8 queries × 2 pages (16 calls per 24h sync)",
       "riskLevel": "safe"
@@ -102,16 +102,16 @@
     },
     {
       "provider": "NHS Jobs Official UK XML API",
-      "callsThisMonth": 4,
-      "callsTotal": 4,
+      "callsThisMonth": 8,
+      "callsTotal": 8,
       "quotaLimit": "Unlimited · No Key",
       "guardNote": "4 R&D / Genomics / Biomedical queries every 24h",
       "riskLevel": "safe"
     },
     {
       "provider": "NHSBSA English Prescribing Dataset API",
-      "callsThisMonth": 22,
-      "callsTotal": 22,
+      "callsThisMonth": 19,
+      "callsTotal": 19,
       "quotaLimit": "Unlimited · No Key",
       "guardNote": "1 metadata + 1 SQL call per 24h sync (monthly NHSBSA EPD)",
       "riskLevel": "safe"
@@ -1534,6 +1534,27 @@
       "summary": "University Hospital Southampton is delighted to offer a fantastic opportunity to work with us Job Title: Specialist Pharmacist Clinical Trials (Cancer..."
     },
     {
+      "id": "NHS-5755630",
+      "title": "Senior Clinical Trials Coordinator - Research &amp; Development",
+      "employer": "East and North Hertfordshire Teaching NHS Trust",
+      "clusterId": "london",
+      "clusterName": "London",
+      "roleFamily": "Clinical Trials & Ops",
+      "subSector": "Research Inst.",
+      "seniority": "Senior",
+      "salaryMinGbp": 32073,
+      "salaryMaxGbp": 39043,
+      "daysOpen": 1,
+      "visaSponsorship": false,
+      "hybridPolicy": "On-site Lab",
+      "skills": [
+        "clinical trial"
+      ],
+      "postedSource": "NHS Jobs UK",
+      "applyUrl": "https://beta.jobs.nhs.uk/candidate/jobadvert/C9361-26-00009",
+      "summary": "We are recruiting for a Senior Clinical Trials Coordinator who shares our vision to be trusted to provide consistently outstanding care and exemplary ..."
+    },
+    {
       "id": "NHS-5735698",
       "title": "Clinical Trials Administrator",
       "employer": "Rowden Medical Partnership",
@@ -1574,27 +1595,6 @@
       "postedSource": "NHS Jobs UK",
       "applyUrl": "https://beta.jobs.nhs.uk/candidate/jobadvert/C9180-26-00039",
       "summary": "We are seeking a Clinical Trials Monitor to join the Cambridge Clinical Trials Unit (CCTU) Regulatory Team. The Clinical Trials Monitor will have resp..."
-    },
-    {
-      "id": "NHS-5755630",
-      "title": "Senior Clinical Trials Coordinator - Research &amp; Development",
-      "employer": "East and North Hertfordshire Teaching NHS Trust",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Clinical Trials & Ops",
-      "subSector": "Research Inst.",
-      "seniority": "Senior",
-      "salaryMinGbp": 32073,
-      "salaryMaxGbp": 39043,
-      "daysOpen": 1,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trial"
-      ],
-      "postedSource": "NHS Jobs UK",
-      "applyUrl": "https://beta.jobs.nhs.uk/candidate/jobadvert/C9361-26-00009",
-      "summary": "We are recruiting for a Senior Clinical Trials Coordinator who shares our vision to be trusted to provide consistently outstanding care and exemplary ..."
     },
     {
       "id": "NHS-5726365",
@@ -2101,90 +2101,6 @@
       "summary": "Lead complex systematic literature review and evidence synthesis projects. Manage client relationships and drive project growth opportunities. Mentor junior team members while shaping scientific strategy and delivery. Su"
     },
     {
-      "id": "REED-57542981",
-      "title": "Clinical Research Associate II",
-      "employer": "IQVIA",
-      "clusterId": "manchester",
-      "clusterName": "Manchester",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "biotechnology"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/clinical-research-associate-ii/57542981",
-      "summary": "Why Join Clinical Functional Service Partnerships (CFSP)? At IQVIA, our Clinical Functional Service Partnership (CFSP) model gives you the best of both worlds: the variety and sponsor-level exposure of working as an embe"
-    },
-    {
-      "id": "REED-57542979",
-      "title": "Clinical Research Associate II",
-      "employer": "IQVIA",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "biotechnology"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/clinical-research-associate-ii/57542979",
-      "summary": "Why Join Clinical Functional Service Partnerships (CFSP)? At IQVIA, our Clinical Functional Service Partnership (CFSP) model gives you the best of both worlds: the variety and sponsor-level exposure of working as an embe"
-    },
-    {
-      "id": "REED-57542978",
-      "title": "Clinical Research Associate II",
-      "employer": "IQVIA",
-      "clusterId": "reading",
-      "clusterName": "Reading & Thames Valley",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "biotechnology"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/clinical-research-associate-ii/57542978",
-      "summary": "Why Join Clinical Functional Service Partnerships (CFSP)? At IQVIA, our Clinical Functional Service Partnership (CFSP) model gives you the best of both worlds: the variety and sponsor-level exposure of working as an embe"
-    },
-    {
-      "id": "REED-57510220",
-      "title": "Senior CRA",
-      "employer": "IQVIA",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Senior",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "biotechnology"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/senior-cra/57510220",
-      "summary": "Why Join Clinical Functional Service Partnerships (CFSP)? At IQVIA, our Clinical Functional Service Partnership (CFSP) model gives you the best of both worlds: the variety and sponsor-level exposure of working as an embe"
-    },
-    {
       "id": "REED-57594057",
       "title": "Principal Translational Scientist, Biomarker Strategy, Drug Development, Manchester, COR7755",
       "employer": "Corriculo Ltd",
@@ -2227,48 +2143,6 @@
       "summary": "Account Manager – Life Sciences &amp; Pharmaceutical Location: South West England Salary: 55,000 basic + commission + benefits package The Opportunity We are seeking an ambitious, commercially driven Account Manager to j"
     },
     {
-      "id": "REED-57510219",
-      "title": "Senior CRA",
-      "employer": "IQVIA",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Senior",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "biotechnology"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/senior-cra/57510219",
-      "summary": "Why Join Clinical Functional Service Partnerships (CFSP)? At IQVIA, our Clinical Functional Service Partnership (CFSP) model gives you the best of both worlds: the variety and sponsor-level exposure of working as an embe"
-    },
-    {
-      "id": "REED-57510218",
-      "title": "Senior CRA",
-      "employer": "IQVIA",
-      "clusterId": "reading",
-      "clusterName": "Reading & Thames Valley",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Senior",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "biotechnology"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/senior-cra/57510218",
-      "summary": "Why Join Clinical Functional Service Partnerships (CFSP)? At IQVIA, our Clinical Functional Service Partnership (CFSP) model gives you the best of both worlds: the variety and sponsor-level exposure of working as an embe"
-    },
-    {
       "id": "REED-57488034",
       "title": "Senior Scientist",
       "employer": "EC Resourcing",
@@ -2288,27 +2162,6 @@
       "postedSource": "Reed Science",
       "applyUrl": "https://www.reed.co.uk/jobs/senior-scientist/57488034",
       "summary": "We are seeking an experienced Senior Scientist in In Vivo Pharmacology &amp; Translational Research to join a fast-paced, high-growth biotechnology company. In this pivotal role, you will design, coordinate, and oversee "
-    },
-    {
-      "id": "REED-57484770",
-      "title": "Pipe Fitter / Welder - TIG & ORBITAL",
-      "employer": "HR GO Recruitment",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": 46000,
-      "salaryMaxGbp": 56000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "biotechnology"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/pipe-fitter-welder-tig-orbital/57484770",
-      "summary": "Pipe Fitter / Welder - TIG &amp; ORBITAL Permanent, Full-time Salary Guide: 45,000 to 56,000 PA: Depending on Experience Hours: Monday to Friday, 40 hours Location: Bishop's Stortford, Hertfordshire (CM23) with easy acce"
     },
     {
       "id": "REED-57544220",
@@ -2351,6 +2204,27 @@
       "postedSource": "Reed Science",
       "applyUrl": "https://www.reed.co.uk/jobs/media-strategy-lead/57465311",
       "summary": "Media Strategy Lead (Temporary Maternity Cover - Until February 2028) Location: Amersham, Buckinghamshire Client: Cytiva Recruitment Partner: Acorn by Synergie Contract: Fixed-Term Temporary Assignment (Maternity Cover) "
+    },
+    {
+      "id": "REED-57484770",
+      "title": "Pipe Fitter / Welder - TIG & ORBITAL",
+      "employer": "HR GO Recruitment",
+      "clusterId": "london",
+      "clusterName": "London",
+      "roleFamily": "Med Chem & DMPK",
+      "subSector": "Biotech",
+      "seniority": "Mid",
+      "salaryMinGbp": 46000,
+      "salaryMaxGbp": 56000,
+      "daysOpen": 7,
+      "visaSponsorship": false,
+      "hybridPolicy": "On-site Lab",
+      "skills": [
+        "biotechnology"
+      ],
+      "postedSource": "Reed Science",
+      "applyUrl": "https://www.reed.co.uk/jobs/pipe-fitter-welder-tig-orbital/57484770",
+      "summary": "Pipe Fitter / Welder - TIG &amp; ORBITAL Permanent, Full-time Salary Guide: 45,000 to 56,000 PA: Depending on Experience Hours: Monday to Friday, 40 hours Location: Bishop's Stortford, Hertfordshire (CM23) with easy acce"
     },
     {
       "id": "REED-57614890",
@@ -2644,27 +2518,6 @@
       ],
       "postedSource": "Reed Science",
       "applyUrl": "https://www.reed.co.uk/jobs/supply-chain-analyst/57611599",
-      "summary": "Senior Supply Chain Analyst (Digital Transformation) Salary: 60k - 65k per annum, DOE Location: Hertfordshire Job Type: Permanent, Full Time Join our dynamic team as a Supply Chain Analyst and enhance the effectiveness, "
-    },
-    {
-      "id": "REED-57611596",
-      "title": "Supply Chain Analyst",
-      "employer": "Reed",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": 60000,
-      "salaryMaxGbp": 65000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "biotechnology"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/supply-chain-analyst/57611596",
       "summary": "Senior Supply Chain Analyst (Digital Transformation) Salary: 60k - 65k per annum, DOE Location: Hertfordshire Job Type: Permanent, Full Time Join our dynamic team as a Supply Chain Analyst and enhance the effectiveness, "
     },
     {
@@ -3361,48 +3214,6 @@
       "summary": "Clinical Negligence Solicitor Manchester | Hybrid Working A growing claimant Personal Injury law firm is looking to expand its Clinical Negligence team in Manchester. This is an excellent opportunity for an experienced C"
     },
     {
-      "id": "REED-57619451",
-      "title": "Clinical Negligence Solicitor",
-      "employer": "G2 Legal Limited",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": 45000,
-      "salaryMaxGbp": 70000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "Hybrid 3d",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/clinical-negligence-solicitor/57619451",
-      "summary": "Clinical Negligence Solicitor (NQ – Senior Associate) Newcastle | 45,000-70,000+ DOE | Hybrid Working A nationally recognised law firm is looking to expand its highly regarded Healthcare Litigation department, with an op"
-    },
-    {
-      "id": "REED-57508427",
-      "title": "Clinical Negligence Solicitor",
-      "employer": "G2 Legal Limited",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "Hybrid 3d",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/clinical-negligence-solicitor/57508427",
-      "summary": "Title: Clinical Negligence Solicitor Location: Manchester City Centre (Hybrid) A highly regarded claimant law firm is looking for a Clinical Negligence Solicitor to join its growing Manchester team. This is an excellent "
-    },
-    {
       "id": "REED-57571526",
       "title": "Clinical Negligence Solicitor",
       "employer": "eNL Legal Recruitment",
@@ -3422,111 +3233,6 @@
       "postedSource": "Reed Science",
       "applyUrl": "https://www.reed.co.uk/jobs/clinical-negligence-solicitor/57571526",
       "summary": "Clinical Negligence Solicitor / 3+ PQE / Yorkshire / Salary DOE / A new opportunity has been made for a Clinical Negligence Solicitor to join a specialist team. The firm offers complex and high value claims, along with g"
-    },
-    {
-      "id": "REED-57596045",
-      "title": "Clinical Negligence Solicitor",
-      "employer": "G2 Legal Limited",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": 35000,
-      "salaryMaxGbp": 50000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/clinical-negligence-solicitor/57596045",
-      "summary": "Clinical Negligence Solicitor Location: Hull Salary: Competitive salary + benefits Job Type: Full time, Permanent A leading law firm in Hull is looking to recruit an experienced Clinical Negligence Solicitor to join its "
-    },
-    {
-      "id": "REED-57614563",
-      "title": "Clinical Negligence Solicitor",
-      "employer": "G2 Legal Limited",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": 45000,
-      "salaryMaxGbp": 60000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/clinical-negligence-solicitor/57614563",
-      "summary": "Clinical Negligence Solicitor – Liverpool One of the region’s most highly regarded Clinical Negligence teams is expanding and now seeks an experienced and passionate Clinical Negligence Solicitor to join their ranks. Thi"
-    },
-    {
-      "id": "REED-57533419",
-      "title": "Clinical Negligence Solicitor",
-      "employer": "G2 Legal Limited",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": 45000,
-      "salaryMaxGbp": 55000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "Hybrid 3d",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/clinical-negligence-solicitor/57533419",
-      "summary": "Title: Clinical Negligence Solicitor Location: Manchester (Hybrid) A growing claimant personal injury firm is looking for an experienced Clinical Negligence Solicitor to join its expanding Manchester team. This is an exc"
-    },
-    {
-      "id": "REED-57589378",
-      "title": "Clinical Negligence Solicitor",
-      "employer": "eNL Legal Recruitment",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": 35000,
-      "salaryMaxGbp": 55000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/clinical-negligence-solicitor/57589378",
-      "summary": "Clinical Negligence Lawyer / NQ+ PQE / Leeds / c 55,000 DOE / An excellent opportunity for a Clinical Negligence Lawyer to join a highly regarded and expanding claimant team, handling complex, high-value cases while enjo"
-    },
-    {
-      "id": "REED-57616803",
-      "title": "Clinical Negligence Solicitor",
-      "employer": "G2 Legal Limited",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "Hybrid 3d",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/clinical-negligence-solicitor/57616803",
-      "summary": "Title: Clinical Negligence Solicitor Location: Manchester (Hybrid) A rapidly growing claimant personal injury firm is expanding its Clinical Negligence team and is looking for an ambitious Solicitor to join its Mancheste"
     },
     {
       "id": "REED-57545847",
@@ -3550,27 +3256,6 @@
       "summary": "Are you an experienced Sales professional with a proven track record of selling into the NHS? Do you have experience selling capital equipment or complex, consultative solutions ? Are you confident building relationships"
     },
     {
-      "id": "REED-57545801",
-      "title": "Clinical Sales Executive",
-      "employer": "Owen Daniels",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Research Inst.",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/clinical-sales-executive/57545801",
-      "summary": "Are you an experienced Sales professional with a proven track record of selling into the NHS? Do you have experience selling capital equipment or complex, consultative solutions ? Are you confident building relationships"
-    },
-    {
       "id": "REED-57619463",
       "title": "Credit Hire Litigator",
       "employer": "Bond Turner",
@@ -3590,48 +3275,6 @@
       "postedSource": "Reed Science",
       "applyUrl": "https://www.reed.co.uk/jobs/credit-hire-litigator/57619463",
       "summary": "Bond Turner is a leading law firm, proudly recognised by both Legal 500 and Chambers &amp; Partners . We are committed to ensuring access to justice for our clients and their families, providing expert legal services wit"
-    },
-    {
-      "id": "REED-57608393",
-      "title": "Clinical Negligence Solicitor",
-      "employer": "eNL Legal Recruitment",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": 50000,
-      "salaryMaxGbp": 60000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/clinical-negligence-solicitor/57608393",
-      "summary": "Clinical Negligence Solicitor, 2+ PQE, Essex, 50,000- 60,000 (DOE) – Are you in the early stages of your career as a Clinical Negligence Solicitor and looking for your next step up? Why not join a firm which entrusts you"
-    },
-    {
-      "id": "REED-57557158",
-      "title": "Clinical Negligence Solicitor",
-      "employer": "eNL Legal Recruitment",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": 35000,
-      "salaryMaxGbp": 45000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/clinical-negligence-solicitor/57557158",
-      "summary": "Clinical Negligence Solicitor / 2+ PQE / Merseyside / c 45,000 DOE / An excellent opportunity for a Clinical Negligence Solicitor to join a supportive and collaborative team, managing a varied caseload of medical neglige"
     },
     {
       "id": "REED-57493831",
@@ -3715,27 +3358,6 @@
       ],
       "postedSource": "Reed Science",
       "applyUrl": "https://www.reed.co.uk/jobs/experienced-clinical-research-associate/57409082",
-      "summary": "Join IQVIA on our mission to accelerate innovation for a healthier world! IQVIA UK’s cFSP (sponsor-dedicated) team is growing and seeking experienced Clinical Research Associates. Why IQVIA? Career development opportunit"
-    },
-    {
-      "id": "REED-57409084",
-      "title": "Experienced Clinical Research Associate",
-      "employer": "IQVIA",
-      "clusterId": "manchester",
-      "clusterName": "Manchester",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/experienced-clinical-research-associate/57409084",
       "summary": "Join IQVIA on our mission to accelerate innovation for a healthier world! IQVIA UK’s cFSP (sponsor-dedicated) team is growing and seeking experienced Clinical Research Associates. Why IQVIA? Career development opportunit"
     },
     {
@@ -3865,27 +3487,6 @@
       "summary": "ROLE OVERVIEW We are currently looking for an Audit and Third-Party Assurance Manager to join a pharmaceutical business supporting clinical trial supply. As the Audit and Third-Party Assurance Manager you will be respons"
     },
     {
-      "id": "REED-57542969",
-      "title": "CRA2 - Multi-Sponsor Department",
-      "employer": "IQVIA",
-      "clusterId": "reading",
-      "clusterName": "Reading & Thames Valley",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/cra2-multi-sponsor-department/57542969",
-      "summary": "IQVIA UK’s Site Management (multi-sponsor) team is growing and seeking junior and experienced Clinical Research Associates. Apply today and forge a career with greater purpose, make an impact, and never stop learning! Re"
-    },
-    {
       "id": "REED-57542968",
       "title": "CRA2 - Multi-Sponsor Department",
       "employer": "IQVIA",
@@ -3904,48 +3505,6 @@
       ],
       "postedSource": "Reed Science",
       "applyUrl": "https://www.reed.co.uk/jobs/cra2-multi-sponsor-department/57542968",
-      "summary": "IQVIA UK’s Site Management (multi-sponsor) team is growing and seeking junior and experienced Clinical Research Associates. Apply today and forge a career with greater purpose, make an impact, and never stop learning! Re"
-    },
-    {
-      "id": "REED-57542967",
-      "title": "CRA2 - Multi-Sponsor Department",
-      "employer": "IQVIA",
-      "clusterId": "leeds",
-      "clusterName": "Leeds & Bradford",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/cra2-multi-sponsor-department/57542967",
-      "summary": "IQVIA UK’s Site Management (multi-sponsor) team is growing and seeking junior and experienced Clinical Research Associates. Apply today and forge a career with greater purpose, make an impact, and never stop learning! Re"
-    },
-    {
-      "id": "REED-57542966",
-      "title": "CRA2 - Multi-Sponsor Department",
-      "employer": "IQVIA",
-      "clusterId": "manchester",
-      "clusterName": "Manchester",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/cra2-multi-sponsor-department/57542966",
       "summary": "IQVIA UK’s Site Management (multi-sponsor) team is growing and seeking junior and experienced Clinical Research Associates. Apply today and forge a career with greater purpose, make an impact, and never stop learning! Re"
     },
     {
@@ -3991,27 +3550,6 @@
       "summary": "Join Us on Our Mission to Drive Healthcare Forward IQVIA cFSP (sponsor-dedicated) are seeking experienced Clinical Research Associates in the UK. Job Overview Perform monitoring and site management work to ensure that si"
     },
     {
-      "id": "REED-57542962",
-      "title": "CRA 2 - Single Sponsor Dedicated",
-      "employer": "IQVIA",
-      "clusterId": "reading",
-      "clusterName": "Reading & Thames Valley",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/cra-2-single-sponsor-dedicated/57542962",
-      "summary": "Join Us on Our Mission to Drive Healthcare Forward IQVIA cFSP (sponsor-dedicated) are seeking experienced Clinical Research Associates in the UK. Job Overview Perform monitoring and site management work to ensure that si"
-    },
-    {
       "id": "REED-57542961",
       "title": "Sr. CRA 1 - Single Sponsor Dedicated",
       "employer": "IQVIA",
@@ -4054,111 +3592,6 @@
       "summary": "Join Us on Our Mission to Drive Healthcare Forward IQVIA UK’s Site Management team is growing, and we’re hiring two Senior CRAs. Join us to build a meaningful career, drive real impact, and continue your professional gro"
     },
     {
-      "id": "REED-57542964",
-      "title": "CRA 2 - Single Sponsor Dedicated",
-      "employer": "IQVIA",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/cra-2-single-sponsor-dedicated/57542964",
-      "summary": "Join Us on Our Mission to Drive Healthcare Forward IQVIA cFSP (sponsor-dedicated) are seeking experienced Clinical Research Associates in the UK. Job Overview Perform monitoring and site management work to ensure that si"
-    },
-    {
-      "id": "REED-57542963",
-      "title": "CRA 2 - Single Sponsor Dedicated",
-      "employer": "IQVIA",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/cra-2-single-sponsor-dedicated/57542963",
-      "summary": "Join Us on Our Mission to Drive Healthcare Forward IQVIA cFSP (sponsor-dedicated) are seeking experienced Clinical Research Associates in the UK. Job Overview Perform monitoring and site management work to ensure that si"
-    },
-    {
-      "id": "REED-57542977",
-      "title": "CRA 2, IQVIA Biotech",
-      "employer": "IQVIA",
-      "clusterId": "manchester",
-      "clusterName": "Manchester",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/cra-2-iqvia-biotech/57542977",
-      "summary": "Join IQVIA Biotech – Where Innovation Meets Impact At IQVIA Biotech, we specialize in partnering with smaller biotech and emerging biopharma companies, creating a uniquely dynamic and fast-paced environment. Here, you wo"
-    },
-    {
-      "id": "REED-57470347",
-      "title": "Senior CRA - IQVIA Biotech",
-      "employer": "IQVIA",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Senior",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/senior-cra-iqvia-biotech/57470347",
-      "summary": "Join IQVIA Biotech – Where Innovation Meets Impact At IQVIA Biotech, we specialize in partnering with smaller biotech and emerging biopharma companies, creating a uniquely dynamic and fast-paced environment. Here, you wo"
-    },
-    {
-      "id": "REED-57470346",
-      "title": "Senior CRA - IQVIA Biotech",
-      "employer": "IQVIA",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Senior",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/senior-cra-iqvia-biotech/57470346",
-      "summary": "Join IQVIA Biotech – Where Innovation Meets Impact At IQVIA Biotech, we specialize in partnering with smaller biotech and emerging biopharma companies, creating a uniquely dynamic and fast-paced environment. Here, you wo"
-    },
-    {
       "id": "REED-57542974",
       "title": "CRA 2, IQVIA Biotech",
       "employer": "IQVIA",
@@ -4198,132 +3631,6 @@
       ],
       "postedSource": "Reed Science",
       "applyUrl": "https://www.reed.co.uk/jobs/senior-cra-iqvia-biotech/57470348",
-      "summary": "Join IQVIA Biotech – Where Innovation Meets Impact At IQVIA Biotech, we specialize in partnering with smaller biotech and emerging biopharma companies, creating a uniquely dynamic and fast-paced environment. Here, you wo"
-    },
-    {
-      "id": "REED-57470345",
-      "title": "Senior CRA - IQVIA Biotech",
-      "employer": "IQVIA",
-      "clusterId": "reading",
-      "clusterName": "Reading & Thames Valley",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Senior",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/senior-cra-iqvia-biotech/57470345",
-      "summary": "Join IQVIA Biotech – Where Innovation Meets Impact At IQVIA Biotech, we specialize in partnering with smaller biotech and emerging biopharma companies, creating a uniquely dynamic and fast-paced environment. Here, you wo"
-    },
-    {
-      "id": "REED-57542972",
-      "title": "Sr. CRA 1 - Site Management",
-      "employer": "IQVIA",
-      "clusterId": "reading",
-      "clusterName": "Reading & Thames Valley",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/sr-cra-1-site-management/57542972",
-      "summary": "Join Us on Our Mission to Drive Healthcare Forward IQVIA UK’s Site Management team is growing, and we’re hiring two Senior CRAs. Join us to build a meaningful career, drive real impact, and continue your professional gro"
-    },
-    {
-      "id": "REED-57542970",
-      "title": "Sr. CRA 1 - Site Management",
-      "employer": "IQVIA",
-      "clusterId": "manchester",
-      "clusterName": "Manchester",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/sr-cra-1-site-management/57542970",
-      "summary": "Join Us on Our Mission to Drive Healthcare Forward IQVIA UK’s Site Management team is growing, and we’re hiring two Senior CRAs. Join us to build a meaningful career, drive real impact, and continue your professional gro"
-    },
-    {
-      "id": "REED-57542976",
-      "title": "CRA 2, IQVIA Biotech",
-      "employer": "IQVIA",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/cra-2-iqvia-biotech/57542976",
-      "summary": "Join IQVIA Biotech – Where Innovation Meets Impact At IQVIA Biotech, we specialize in partnering with smaller biotech and emerging biopharma companies, creating a uniquely dynamic and fast-paced environment. Here, you wo"
-    },
-    {
-      "id": "REED-57542975",
-      "title": "CRA 2, IQVIA Biotech",
-      "employer": "IQVIA",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/cra-2-iqvia-biotech/57542975",
-      "summary": "Join IQVIA Biotech – Where Innovation Meets Impact At IQVIA Biotech, we specialize in partnering with smaller biotech and emerging biopharma companies, creating a uniquely dynamic and fast-paced environment. Here, you wo"
-    },
-    {
-      "id": "REED-57542973",
-      "title": "CRA 2, IQVIA Biotech",
-      "employer": "IQVIA",
-      "clusterId": "reading",
-      "clusterName": "Reading & Thames Valley",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/cra-2-iqvia-biotech/57542973",
       "summary": "Join IQVIA Biotech – Where Innovation Meets Impact At IQVIA Biotech, we specialize in partnering with smaller biotech and emerging biopharma companies, creating a uniquely dynamic and fast-paced environment. Here, you wo"
     },
     {
@@ -4411,48 +3718,6 @@
       "summary": "Consumables Stock Controller Carlisle | Part-Time | 22.5 Hours per Week | Monday to Friday Are you an experienced Stock Controller looking for a permanent part-time role that offers a better work-life balance? We are rec"
     },
     {
-      "id": "REED-57598704",
-      "title": "SR CRA I",
-      "employer": "IQVIA",
-      "clusterId": "manchester",
-      "clusterName": "Manchester",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/sr-cra-i/57598704",
-      "summary": "Join IQVIA on our mission to accelerate innovation for a healthier world! IQVIA’s Site Management (full service / multi-sponsor) team is growing and seeking Senior Clinical Research Associates in the UK. Why IQVIA? Genui"
-    },
-    {
-      "id": "REED-57598705",
-      "title": "Experienced CRA - Real World Evidence",
-      "employer": "IQVIA",
-      "clusterId": "manchester",
-      "clusterName": "Manchester",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/experienced-cra-real-world-evidence/57598705",
-      "summary": "Join IQVIA on our mission to accelerate innovation for a healthier world! IQVIA UK’s RWE team is seeking a Clinical Research Associate II to support Phase 3b and Phase 4 studies across a diverse range of therapeutic area"
-    },
-    {
       "id": "REED-57598706",
       "title": "Experienced CRA - Real World Evidence",
       "employer": "IQVIA",
@@ -4474,11 +3739,11 @@
       "summary": "Join IQVIA on our mission to accelerate innovation for a healthier world! IQVIA UK’s RWE team is seeking a Clinical Research Associate II to support Phase 3b and Phase 4 studies across a diverse range of therapeutic area"
     },
     {
-      "id": "REED-57598707",
-      "title": "Experienced CRA - Real World Evidence",
+      "id": "REED-57598704",
+      "title": "SR CRA I",
       "employer": "IQVIA",
-      "clusterId": "london",
-      "clusterName": "London",
+      "clusterId": "manchester",
+      "clusterName": "Manchester",
       "roleFamily": "Med Chem & DMPK",
       "subSector": "CRO / CDMO",
       "seniority": "Mid",
@@ -4491,8 +3756,8 @@
         "clinical trials"
       ],
       "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/experienced-cra-real-world-evidence/57598707",
-      "summary": "Join IQVIA on our mission to accelerate innovation for a healthier world! IQVIA UK’s RWE team is seeking a Clinical Research Associate II to support Phase 3b and Phase 4 studies across a diverse range of therapeutic area"
+      "applyUrl": "https://www.reed.co.uk/jobs/sr-cra-i/57598704",
+      "summary": "Join IQVIA on our mission to accelerate innovation for a healthier world! IQVIA’s Site Management (full service / multi-sponsor) team is growing and seeking Senior Clinical Research Associates in the UK. Why IQVIA? Genui"
     },
     {
       "id": "REED-57510212",
@@ -4534,48 +3799,6 @@
       ],
       "postedSource": "Reed Science",
       "applyUrl": "https://www.reed.co.uk/jobs/finance-service-centre-officer/57475566",
-      "summary": "An exciting opportunity has arisen for a Finance Service Centre Officer to join a large Higher Education Institution on a temporary basis. You will play a key role in supporting the finance team with finance queries and "
-    },
-    {
-      "id": "REED-57598708",
-      "title": "Experienced CRA - Real World Evidence",
-      "employer": "IQVIA",
-      "clusterId": "reading",
-      "clusterName": "Reading & Thames Valley",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/experienced-cra-real-world-evidence/57598708",
-      "summary": "Join IQVIA on our mission to accelerate innovation for a healthier world! IQVIA UK’s RWE team is seeking a Clinical Research Associate II to support Phase 3b and Phase 4 studies across a diverse range of therapeutic area"
-    },
-    {
-      "id": "REED-57559307",
-      "title": "Finance Service Centre Officer",
-      "employer": "Venn Group",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": 23,
-      "salaryMaxGbp": 23,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/finance-service-centre-officer/57559307",
       "summary": "An exciting opportunity has arisen for a Finance Service Centre Officer to join a large Higher Education Institution on a temporary basis. You will play a key role in supporting the finance team with finance queries and "
     },
     {
@@ -4999,27 +4222,6 @@
       "summary": "Clinical Negligence Lawyer / NQ PQE / Leeds / c 55,000 DOE / An excellent opportunity for a Clinical Negligence Lawyer to join a highly regarded and expanding claimant team, handling complex, high-value cases while enjoy"
     },
     {
-      "id": "REED-57398484",
-      "title": "Clinical Negligence Solicitor",
-      "employer": "The Legists",
-      "clusterId": "leeds",
-      "clusterName": "Leeds & Bradford",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/clinical-negligence-solicitor/57398484",
-      "summary": "Clinical Negligence Lawyer, NQ Years PQE, Leeds, c 55,000 - An exciting opportunity has arisen to join a highly regarded and growing department within a leading UK law firm, offering excellent quality work, genuine caree"
-    },
-    {
       "id": "REED-57398485",
       "title": "Clinical Negligence Lawyer",
       "employer": "The Legists",
@@ -5039,69 +4241,6 @@
       "postedSource": "Reed Science",
       "applyUrl": "https://www.reed.co.uk/jobs/clinical-negligence-lawyer/57398485",
       "summary": "Clinical Negligence Lawyer, NQ Years PQE, North West, c 55,000 - Are you a Clinical Negligence Solicitor or Legal Executive looking to join a nationally recognised claimant litigation team handling complex, high-value ca"
-    },
-    {
-      "id": "REED-57557355",
-      "title": "Clinical Negligence Solicitor",
-      "employer": "The Legists",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/clinical-negligence-solicitor/57557355",
-      "summary": "Clinical Negligence Solicitor / 2 PQE / Merseyside / c 45,000 DOE / An excellent opportunity for a Clinical Negligence Solicitor to join a supportive and collaborative team, managing a varied caseload of medical negligen"
-    },
-    {
-      "id": "REED-57571919",
-      "title": "Clinical Negligence Solicitor",
-      "employer": "The Legists",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/clinical-negligence-solicitor/57571919",
-      "summary": "Clinical Negligence Solicitor / 3 PQE / Yorkshire / Salary DOE / A new opportunity has been made for a Clinical Negligence Solicitor to join a specialist team. The firm offers complex and high value claims, along with ge"
-    },
-    {
-      "id": "REED-57608605",
-      "title": "Clinical Negligence Solicitor",
-      "employer": "The Legists",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "clinical trials"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/clinical-negligence-solicitor/57608605",
-      "summary": "Clinical Negligence Solicitor, 2 PQE, Essex, 50,000- 60,000 (DOE) – Are you in the early stages of your career as a Clinical Negligence Solicitor and looking for your next step up? Why not join a firm which entrusts you "
     },
     {
       "id": "REED-57546683",
@@ -5272,16 +4411,16 @@
       "summary": "Senior Antibody Engineer (Team Lead) Permanent, full-time, onsite. Location: Macclesfield Up to c 50,000 depending on experience. c 38,000 for recent PhD holders Our client are a multi-national drug discovery organisatio"
     },
     {
-      "id": "REED-57604729",
-      "title": "Data Science Trainee",
-      "employer": "ITOL Recruit",
+      "id": "REED-57513697",
+      "title": "Senior Systems Engineer",
+      "employer": "Saab UK",
       "clusterId": "london",
       "clusterName": "London",
-      "roleFamily": "Bioinformatics & AI",
+      "roleFamily": "Med Chem & DMPK",
       "subSector": "Biotech",
-      "seniority": "Junior",
-      "salaryMinGbp": 30000,
-      "salaryMaxGbp": 50000,
+      "seniority": "Senior",
+      "salaryMinGbp": null,
+      "salaryMaxGbp": null,
       "daysOpen": 7,
       "visaSponsorship": false,
       "hybridPolicy": "On-site Lab",
@@ -5289,8 +4428,8 @@
         "graduate scientist"
       ],
       "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/data-science-trainee/57604729",
-      "summary": "Data Science Trainee – No Experience Needed Build a future-proof career in Data &amp; AI – starting today. Artificial Intelligence runs on data — and businesses are crying out for professionals who can collect, analyse, "
+      "applyUrl": "https://www.reed.co.uk/jobs/senior-systems-engineer/57513697",
+      "summary": "Introduction: Saab UK is part of Scandinavia's largest defence company, bringing together the best of Swedish and British innovation. Saab offers world-leading solutions and services in defence, aviation, space, and civi"
     },
     {
       "id": "REED-57617267",
@@ -5312,27 +4451,6 @@
       "postedSource": "Reed Science",
       "applyUrl": "https://www.reed.co.uk/jobs/graduate-sales-executive/57617267",
       "summary": "Plumbers and salespeople. The two jobs AI can’t take. Graduate Sales Executive | London EC2 | 30,000 base, OTE 70,000 Every other day, another job gets handed to AI. Copywriters, coders, analysts, even the people who use"
-    },
-    {
-      "id": "REED-57513697",
-      "title": "Senior Systems Engineer",
-      "employer": "Saab UK",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Senior",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/senior-systems-engineer/57513697",
-      "summary": "Introduction: Saab UK is part of Scandinavia's largest defence company, bringing together the best of Swedish and British innovation. Saab offers world-leading solutions and services in defence, aviation, space, and civi"
     },
     {
       "id": "REED-57515128",
@@ -5377,27 +4495,6 @@
       "summary": "Graduate Commercial Careers Programme Tired of generic graduate schemes? We believe in facts that truly matter for your career. Many students graduate without a clear career path , but the market is brimming with fantast"
     },
     {
-      "id": "REED-57508401",
-      "title": "Graduate Commercial Programme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 30000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/graduate-commercial-programme/57508401",
-      "summary": "Graduate Commercial Careers Programme Tired of generic graduate schemes? We believe in facts that truly matter for your career. Many students graduate without a clear career path , but the market is brimming with fantast"
-    },
-    {
       "id": "REED-57557769",
       "title": "Graduate Recruitment Programme",
       "employer": "Pareto",
@@ -5437,1749 +4534,6 @@
       ],
       "postedSource": "Reed Science",
       "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57540481",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57602466",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 26500,
-      "salaryMaxGbp": 26500,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57602466",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57592515",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 33000,
-      "salaryMaxGbp": 33000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57592515",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57618849",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 28000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57618849",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57618347",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 35000,
-      "salaryMaxGbp": 35000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57618347",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57618309",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 30000,
-      "salaryMaxGbp": 35000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57618309",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57617254",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 32000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57617254",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57588889",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 35000,
-      "salaryMaxGbp": 50000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57588889",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57588766",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 33000,
-      "salaryMaxGbp": 33000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57588766",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57583657",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 33000,
-      "salaryMaxGbp": 33000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57583657",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57611851",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 28000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57611851",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57611779",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "edinburgh",
-      "clusterName": "Edinburgh",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 28000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57611779",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57562687",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 30000,
-      "salaryMaxGbp": 30000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57562687",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57562600",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "glasgow",
-      "clusterName": "Glasgow",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 30000,
-      "salaryMaxGbp": 35000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57562600",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57562527",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "leeds",
-      "clusterName": "Leeds & Bradford",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 26000,
-      "salaryMaxGbp": 26000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57562527",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57572056",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "leeds",
-      "clusterName": "Leeds & Bradford",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 28000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57572056",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57605164",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "edinburgh",
-      "clusterName": "Edinburgh",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 31600,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57605164",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57605067",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "glasgow",
-      "clusterName": "Glasgow",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 32000,
-      "salaryMaxGbp": 32000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57605067",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57557846",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 35000,
-      "salaryMaxGbp": 40000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57557846",
-      "summary": "Job Title: Commercial Associate Graduate Scheme - German Speaker Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting prop"
-    },
-    {
-      "id": "REED-57554427",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "bristol",
-      "clusterName": "Bristol & Bath",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 33000,
-      "salaryMaxGbp": 33000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57554427",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57554156",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 35000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57554156",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57545765",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 30000,
-      "salaryMaxGbp": 40000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57545765",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57545482",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 25000,
-      "salaryMaxGbp": 29000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57545482",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57540353",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "bristol",
-      "clusterName": "Bristol & Bath",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28350,
-      "salaryMaxGbp": 28350,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57540353",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57538528",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 31200,
-      "salaryMaxGbp": 31200,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57538528",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57534916",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "oxford",
-      "clusterName": "Oxford",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 32000,
-      "salaryMaxGbp": 32000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57534916",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57534337",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "glasgow",
-      "clusterName": "Glasgow",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 27000,
-      "salaryMaxGbp": 28000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57534337",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57534266",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "leeds",
-      "clusterName": "Leeds & Bradford",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 28000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57534266",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57534196",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "reading",
-      "clusterName": "Reading & Thames Valley",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 33000,
-      "salaryMaxGbp": 33000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57534196",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57528197",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "reading",
-      "clusterName": "Reading & Thames Valley",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 30000,
-      "salaryMaxGbp": 40000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57528197",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57528141",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "oxford",
-      "clusterName": "Oxford",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28350,
-      "salaryMaxGbp": 28350,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57528141",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57520751",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 30000,
-      "salaryMaxGbp": 35000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57520751",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57508284",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "reading",
-      "clusterName": "Reading & Thames Valley",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 30000,
-      "salaryMaxGbp": 45000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57508284",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57507083",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "leeds",
-      "clusterName": "Leeds & Bradford",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 27000,
-      "salaryMaxGbp": 28000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57507083",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57507016",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "leeds",
-      "clusterName": "Leeds & Bradford",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 28000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57507016",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57554381",
-      "title": "Graduate Commercial Programme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 35000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/graduate-commercial-programme/57554381",
-      "summary": "Graduate Commercial Careers Programme Tired of generic graduate schemes? We believe in facts that truly matter for your career. Many students graduate without a clear career path , but the market is brimming with fantast"
-    },
-    {
-      "id": "REED-57520880",
-      "title": "Graduate Commercial Programme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Junior",
-      "salaryMinGbp": 30000,
-      "salaryMaxGbp": 30000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/graduate-commercial-programme/57520880",
-      "summary": "Graduate Commercial Careers Programme Tired of generic graduate schemes? We believe in facts that truly matter for your career. Many students graduate without a clear career path , but the market is brimming with fantast"
-    },
-    {
-      "id": "REED-57589090",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 32000,
-      "salaryMaxGbp": 32000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57589090",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57588567",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "edinburgh",
-      "clusterName": "Edinburgh",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 28000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57588567",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Must have a driving licence and a car Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a tho"
-    },
-    {
-      "id": "REED-57588488",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "manchester",
-      "clusterName": "Manchester",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 28000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57588488",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Must have a driving licence and a car Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a tho"
-    },
-    {
-      "id": "REED-57583306",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "reading",
-      "clusterName": "Reading & Thames Valley",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 33000,
-      "salaryMaxGbp": 33000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57583306",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57566514",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "reading",
-      "clusterName": "Reading & Thames Valley",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28350,
-      "salaryMaxGbp": 28350,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57566514",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Must have a driving licence and a car Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a tho"
-    },
-    {
-      "id": "REED-57607040",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 32000,
-      "salaryMaxGbp": 32000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57607040",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Must have a driving licence and a car Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a tho"
-    },
-    {
-      "id": "REED-57562406",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 32000,
-      "salaryMaxGbp": 32000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57562406",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Must have a driving licence and a car Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a tho"
-    },
-    {
-      "id": "REED-57562323",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "glasgow",
-      "clusterName": "Glasgow",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 32000,
-      "salaryMaxGbp": 32000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57562323",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Must have a driving licence and a car Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a tho"
-    },
-    {
-      "id": "REED-57562279",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 32000,
-      "salaryMaxGbp": 32000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57562279",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Must have a driving licence and a car Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a tho"
-    },
-    {
-      "id": "REED-57605106",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 32000,
-      "salaryMaxGbp": 32000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57605106",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57593245",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 32000,
-      "salaryMaxGbp": 32000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57593245",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57558632",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 33000,
-      "salaryMaxGbp": 33000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57558632",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57557912",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "oxford",
-      "clusterName": "Oxford",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 32000,
-      "salaryMaxGbp": 32000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57557912",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Must have a driving licence and a car Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a tho"
-    },
-    {
-      "id": "REED-57515977",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28350,
-      "salaryMaxGbp": 28350,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57515977",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57592639",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 32000,
-      "salaryMaxGbp": 35000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57592639",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57618778",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "glasgow",
-      "clusterName": "Glasgow",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 27000,
-      "salaryMaxGbp": 28000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57618778",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57618618",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 25000,
-      "salaryMaxGbp": 27000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57618618",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57618413",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 32000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57618413",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57617369",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 30000,
-      "salaryMaxGbp": 35000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57617369",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57617194",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "glasgow",
-      "clusterName": "Glasgow",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 30000,
-      "salaryMaxGbp": 35000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57617194",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57617067",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 35000,
-      "salaryMaxGbp": 35000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57617067",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57612351",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "leeds",
-      "clusterName": "Leeds & Bradford",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 26000,
-      "salaryMaxGbp": 26000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57612351",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57612236",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "oxford",
-      "clusterName": "Oxford",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 26000,
-      "salaryMaxGbp": 40000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57612236",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57583324",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 28000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57583324",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57566665",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "leeds",
-      "clusterName": "Leeds & Bradford",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 28000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57566665",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57583029",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "glasgow",
-      "clusterName": "Glasgow",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 27000,
-      "salaryMaxGbp": 28000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57583029",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57611615",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 40000,
-      "salaryMaxGbp": 60000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57611615",
-      "summary": "Job Title: Commercial Associate Graduate Scheme - Dutch Speaker Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting propo"
-    },
-    {
-      "id": "REED-57611375",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 40000,
-      "salaryMaxGbp": 60000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57611375",
-      "summary": "Job Title: Commercial Associate Graduate Scheme - German Speaker Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting prop"
-    },
-    {
-      "id": "REED-57562723",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 32000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57562723",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57562228",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 35000,
-      "salaryMaxGbp": 35000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57562228",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57596402",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 28000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57596402",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57596264",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 30000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57596264",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57592793",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 32000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57592793",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57554029",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 28000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57554029",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57545440",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 35000,
-      "salaryMaxGbp": 40000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57545440",
-      "summary": "Job Title: Commercial Associate Graduate Scheme - French Speaker Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting prop"
-    },
-    {
-      "id": "REED-57545077",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 30000,
-      "salaryMaxGbp": 35000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57545077",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57544863",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 34000,
-      "salaryMaxGbp": 34000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57544863",
-      "summary": "Job Title: Commercial Associate Graduate Scheme - German Speaker Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting prop"
-    },
-    {
-      "id": "REED-57540530",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 30000,
-      "salaryMaxGbp": 30000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57540530",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57539072",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 30000,
-      "salaryMaxGbp": 30000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57539072",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57534848",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "bristol",
-      "clusterName": "Bristol & Bath",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 33000,
-      "salaryMaxGbp": 33000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57534848",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57534797",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 33000,
-      "salaryMaxGbp": 33000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57534797",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57528005",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 30000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57528005",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57527957",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 35000,
-      "salaryMaxGbp": 35000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57527957",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57524460",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 28000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57524460",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57524283",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 25000,
-      "salaryMaxGbp": 29000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57524283",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57520871",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 30000,
-      "salaryMaxGbp": 30000,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57520871",
-      "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
-    },
-    {
-      "id": "REED-57520520",
-      "title": "Commercial Graduate Scheme",
-      "employer": "Pareto",
-      "clusterId": "edinburgh",
-      "clusterName": "Edinburgh",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 31600,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "graduate scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/commercial-graduate-scheme/57520520",
       "summary": "Job Title: Commercial Associate Graduate Scheme Sector: Tech Today, our client partners with thousands of companies across the UK and Europe. With yearly growth of 40%, they're a thoroughly exciting proposition for any c"
     },
     {
@@ -7328,27 +4682,6 @@
       "postedSource": "Reed Science",
       "applyUrl": "https://www.reed.co.uk/jobs/specialist-histology-biomedical-scientist-bms-locum-derby/57265119",
       "summary": "Vivid Healthcare are looking for an experienced Specialist Biomedical Scientist (BMS) Locum within Histology in Derby Pay: 20- 26 per hour Position Details: Microtomy experience, minimum 20 blocks per hour Start Date: AS"
-    },
-    {
-      "id": "REED-57508591",
-      "title": "Band 6 Microbiology Biomedical Scientist (BMS) Locum",
-      "employer": "Vivid Healthcare Search Limited",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Mid",
-      "salaryMinGbp": 28,
-      "salaryMaxGbp": 35,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "biomedical scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/band-6-microbiology-biomedical-scientist-bms-locum/57508591",
-      "summary": "Vivid Healthcare are looking for an experienced Band 6 Microbiology Biomedical Scientist (BMS) Locum Essex Pay: 30- 35 per hour Position Details: Microbiology and Bacteriology experience essential Start Date: ASAP Locati"
     },
     {
       "id": "REED-57297304",
@@ -7559,27 +4892,6 @@
       "postedSource": "Reed Science",
       "applyUrl": "https://www.reed.co.uk/jobs/specialist-microbiology-biomedical-scientist-bms-locum-kent/57297379",
       "summary": "Vivid Healthcare are looking for an experienced Specialist Biomedical Scientist (BMS) Locum within Microbiology in Kent Pay: 20- 26 per hour Position Details: Bacteriology experience required Start Date: ASAP Location: K"
-    },
-    {
-      "id": "REED-57263686",
-      "title": "Specialist Histology Biomedical Scientist (BMS) Locum Dublin",
-      "employer": "Vivid Healthcare Search Limited",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Mid",
-      "salaryMinGbp": 20,
-      "salaryMaxGbp": 25,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "biomedical scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/specialist-histology-biomedical-scientist-bms-locum-dublin/57263686",
-      "summary": "Vivid Healthcare are looking for an experienced Band 5 Specialist Biomedical Scientist (BMS) Locum within Histology in Dublin Pay: 20- 25 per hour Position Details: Microtomy experience, minimum 20 blocks per hour Start "
     },
     {
       "id": "REED-57508632",
@@ -8044,27 +5356,6 @@
       "summary": "Vivid Healthcare are looking for an experienced Band 6 Biomedical Scientist (BMS) Locum within Biochemistry in Northern Ireland Pay: 25- 35 per hour Position Details: Biochemistry experience Start Date: ASAP Location: No"
     },
     {
-      "id": "REED-57364650",
-      "title": "Band 6 Specialist Haematology Biomedical Scientist (BMS) Locum Northern Ireland",
-      "employer": "Vivid Healthcare Search Limited",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": 20,
-      "salaryMaxGbp": 26,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "biomedical scientist"
-      ],
-      "postedSource": "Reed Science",
-      "applyUrl": "https://www.reed.co.uk/jobs/band-6-specialist-haematology-biomedical-scientist-bms-locum-northern-ireland/57364650",
-      "summary": "Vivid Healthcare are looking for an experienced Specialist Biomedical Scientist (BMS) Locum within Haematology in Northern Ireland Pay: 20- 26 per hour Position Details: Blood Transfusion experience required Start Date: "
-    },
-    {
       "id": "REED-57337005",
       "title": "Band 6 Specialist Haematology Biomedical Scientist (BMS) Locum North tees",
       "employer": "Vivid Healthcare Search Limited",
@@ -8292,7 +5583,7 @@
         "Med Chem & DMPK"
       ],
       "postedSource": "Adzuna UK",
-      "applyUrl": "https://www.adzuna.co.uk/jobs/land/ad/5888045954?se=YkFaN2_q8RGeZK1Lfb8GnA&utm_medium=api&utm_source=2aa98eca&v=E6F3E75136419BF228B7D8CD41723DF3CB7C28DA",
+      "applyUrl": "https://www.adzuna.co.uk/jobs/land/ad/5888045954?se=WNj0VnPq8RGeZK1Lfb8GnA&utm_medium=api&utm_source=2aa98eca&v=E6F3E75136419BF228B7D8CD41723DF3CB7C28DA",
       "summary": "Principal Clinical Scientist (Senior Clinical Scientist level also considered) The Role We're looking for a clinical scientist — someone who has been the scientific lead for clinical studies before, from protocol develop"
     },
     {
@@ -8313,7 +5604,7 @@
         "Regulatory & QA"
       ],
       "postedSource": "Adzuna UK",
-      "applyUrl": "https://www.adzuna.co.uk/jobs/land/ad/5935540875?se=YkFaN2_q8RGeZK1Lfb8GnA&utm_medium=api&utm_source=2aa98eca&v=0BCFF47C25C181689336907A640D9942953E3F3E",
+      "applyUrl": "https://www.adzuna.co.uk/jobs/land/ad/5935540875?se=WNj0VnPq8RGeZK1Lfb8GnA&utm_medium=api&utm_source=2aa98eca&v=0BCFF47C25C181689336907A640D9942953E3F3E",
       "summary": "About the job The Role This a portfolio-level regulatory strategy role covering regions with diverse regulatory requirements and market dynamics: APAC, LATAM, MEA, CIS, Adriatics and Partner Business Regions. Working wit"
     },
     {
@@ -8334,7 +5625,7 @@
         "Clinical Trials & Ops"
       ],
       "postedSource": "Adzuna UK",
-      "applyUrl": "https://www.adzuna.co.uk/jobs/land/ad/5894129208?se=YkFaN2_q8RGeZK1Lfb8GnA&utm_medium=api&utm_source=2aa98eca&v=4CE18E161DF0FAF61A956C6CC3C7DBCF6DF6FD68",
+      "applyUrl": "https://www.adzuna.co.uk/jobs/land/ad/5894129208?se=WNj0VnPq8RGeZK1Lfb8GnA&utm_medium=api&utm_source=2aa98eca&v=4CE18E161DF0FAF61A956C6CC3C7DBCF6DF6FD68",
       "summary": "Senior Clinical Statistical Programmer (Portfolio Development / Biometrics / Programming) The Role CSL is looking for a Senior Programmer to take technical ownership of one or two clinical trials from first line of code "
     },
     {
@@ -8355,7 +5646,7 @@
         "Med Chem & DMPK"
       ],
       "postedSource": "Adzuna UK",
-      "applyUrl": "https://www.adzuna.co.uk/jobs/land/ad/5930599644?se=YkFaN2_q8RGeZK1Lfb8GnA&utm_medium=api&utm_source=2aa98eca&v=1EA5E6ED2F4E2259F4A929EC11B8A7663BD6417C",
+      "applyUrl": "https://www.adzuna.co.uk/jobs/land/ad/5930599644?se=WNj0VnPq8RGeZK1Lfb8GnA&utm_medium=api&utm_source=2aa98eca&v=1EA5E6ED2F4E2259F4A929EC11B8A7663BD6417C",
       "summary": "The Role CSL is looking for a Principal Programmer to take technical ownership of statistical programming across a compound or programme, not just a single study. You’ll be the person who sets how the programming gets do"
     },
     {
@@ -8422,27 +5713,6 @@
       "summary": "Quality and Regulatory Engineer Our client, based in Houghton Le Spring, is recruiting for a Quality and Regulatory Engineer for a maternity cover. Hours are 8.00am - 4.00pm Monday to Friday but may shift to a two-shift "
     },
     {
-      "id": "ADZ-5978751605",
-      "title": "Clinical Research Associate II",
-      "employer": "IQVIA",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 31653,
-      "salaryMaxGbp": 31653,
-      "daysOpen": 2,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "Med Chem & DMPK"
-      ],
-      "postedSource": "Adzuna UK",
-      "applyUrl": "https://www.adzuna.co.uk/jobs/land/ad/5978751605?se=YkFaN2_q8RGeZK1Lfb8GnA&utm_medium=api&utm_source=2aa98eca&v=4152E97D78C59F160539ACB177644D9B60CFC853",
-      "summary": "Why Join Clinical Functional Service Partnerships (CFSP)? At IQVIA, our Clinical Functional Service Partnership (CFSP) model gives you the best of both worlds: the variety and sponsor-level exposure of working as an embe"
-    },
-    {
       "id": "ADZ-5856143266",
       "title": "Principal Scientist, Pharmaceutical Development",
       "employer": "IQVIA",
@@ -8462,27 +5732,6 @@
       "postedSource": "Adzuna UK",
       "applyUrl": "https://www.adzuna.co.uk/jobs/details/5856143266?utm_medium=api&utm_source=2aa98eca",
       "summary": "Cambridge, United Kingdom Full time R1565135 Are you an ambitious scientist with expertise in developability, drug delivery or pharmaceutical development, with an interest in applying digital and AI-enabled approaches to"
-    },
-    {
-      "id": "ADZ-5856981351",
-      "title": "Principal Scientist, Pharmaceutical Development",
-      "employer": "IQVIA",
-      "clusterId": "cambridge",
-      "clusterName": "Cambridge",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Principal / Director",
-      "salaryMinGbp": 42644,
-      "salaryMaxGbp": 42644,
-      "daysOpen": 90,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "Med Chem & DMPK"
-      ],
-      "postedSource": "Adzuna UK",
-      "applyUrl": "https://www.adzuna.co.uk/jobs/details/5856981351?utm_medium=api&utm_source=2aa98eca",
-      "summary": "Are you an ambitious scientist with expertise in developability, drug delivery or pharmaceutical development, with an interest in applying digital and AI-enabled approaches to help molecules progress from discovery towar"
     },
     {
       "id": "ADZ-5696597143",
@@ -8587,27 +5836,6 @@
       ],
       "postedSource": "Adzuna UK",
       "applyUrl": "https://www.adzuna.co.uk/jobs/details/5972367030?utm_medium=api&utm_source=2aa98eca",
-      "summary": "Build our future together At Regeneron, we are committed to advancing innovative medicines through scientific excellence and a strong commitment to regulatory compliance. We are seeking a Senior Manager, Regulatory Intel"
-    },
-    {
-      "id": "ADZ-5972710436",
-      "title": "Senior Manager, Regulatory Intelligence",
-      "employer": "Regeneron Pharmaceuticals",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Regulatory & QA",
-      "subSector": "Biotech",
-      "seniority": "Senior",
-      "salaryMinGbp": 64468,
-      "salaryMaxGbp": 64468,
-      "daysOpen": 7,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "Regulatory & QA"
-      ],
-      "postedSource": "Adzuna UK",
-      "applyUrl": "https://www.adzuna.co.uk/jobs/details/5972710436?utm_medium=api&utm_source=2aa98eca",
       "summary": "Build our future together At Regeneron, we are committed to advancing innovative medicines through scientific excellence and a strong commitment to regulatory compliance. We are seeking a Senior Manager, Regulatory Intel"
     },
     {
@@ -8737,27 +5965,6 @@
       "summary": "R&T Manager - Biotechnology Croda is a FTSE100 organisation where we truly believe our people are our difference and this, along with our values of Innovative, Responsible and Together, create ‘our Purpose, Smart science"
     },
     {
-      "id": "ADZ-5974916346",
-      "title": "Clinical Scientist",
-      "employer": "Synnovis Analytics",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Research Inst.",
-      "seniority": "Mid",
-      "salaryMinGbp": 41471,
-      "salaryMaxGbp": 41471,
-      "daysOpen": 5,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "Med Chem & DMPK"
-      ],
-      "postedSource": "Adzuna UK",
-      "applyUrl": "https://www.adzuna.co.uk/jobs/details/5974916346?utm_medium=api&utm_source=2aa98eca",
-      "summary": "Job summary Synnovis is a partnership between SYNLAB UK & Ireland and the NHS. Our organisation brings together the very best in clinical, scientific and operational expertise. An exciting opportunity for a 12-month part"
-    },
-    {
       "id": "ADZ-5970084149",
       "title": "Clinical Scientist",
       "employer": "The Christie NHS FT",
@@ -8797,27 +6004,6 @@
       ],
       "postedSource": "Adzuna UK",
       "applyUrl": "https://www.adzuna.co.uk/jobs/details/5965588955?utm_medium=api&utm_source=2aa98eca",
-      "summary": "The place to work in pathology We are looking for top talent to join the UK’s leading and fastest growing pathology company – a scientific organisation with a clinical purpose. Working in partnership with our service par"
-    },
-    {
-      "id": "ADZ-5974893248",
-      "title": "Clinical Scientist",
-      "employer": "Synnovis",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": 14560,
-      "salaryMaxGbp": 14560,
-      "daysOpen": 5,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "Med Chem & DMPK"
-      ],
-      "postedSource": "Adzuna UK",
-      "applyUrl": "https://www.adzuna.co.uk/jobs/details/5974893248?utm_medium=api&utm_source=2aa98eca",
       "summary": "The place to work in pathology We are looking for top talent to join the UK’s leading and fastest growing pathology company – a scientific organisation with a clinical purpose. Working in partnership with our service par"
     },
     {
@@ -8863,27 +6049,6 @@
       "summary": "A role combining consultative sales, strategic account management and scientific expertise to create long-term value for clinical customers. What you will do Identify and qualify new business opportunities for clinical b"
     },
     {
-      "id": "ADZ-5970101096",
-      "title": "Clinical Scientist",
-      "employer": "The Christie NHS FT",
-      "clusterId": "manchester",
-      "clusterName": "Manchester",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Research Inst.",
-      "seniority": "Mid",
-      "salaryMinGbp": 49387,
-      "salaryMaxGbp": 56515,
-      "daysOpen": 9,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "Med Chem & DMPK"
-      ],
-      "postedSource": "Adzuna UK",
-      "applyUrl": "https://www.adzuna.co.uk/jobs/details/5970101096?utm_medium=api&utm_source=2aa98eca",
-      "summary": "Job summary Applications are invited for a Clinical Scientist to join the dynamic Radiotherapy Physics group at The Christie. The successful applicant will ideally be HCPC registered, but applications from final-year STP"
-    },
-    {
       "id": "ADZ-5978565765",
       "title": "Clinical Scientist",
       "employer": "Parexel International, LLC",
@@ -8923,27 +6088,6 @@
       ],
       "postedSource": "Adzuna UK",
       "applyUrl": "https://www.adzuna.co.uk/jobs/details/5936494071?utm_medium=api&utm_source=2aa98eca",
-      "summary": "Build our future together: At Regeneron, we use science and innovation to develop life-changing medicines for people with serious diseases. We are seeking an Associate Manager, Regulatory Affairs to join our UK regional "
-    },
-    {
-      "id": "ADZ-5937237235",
-      "title": "Associate Manager Regulatory Affairs",
-      "employer": "Regeneron Pharmaceuticals",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Regulatory & QA",
-      "subSector": "Biotech",
-      "seniority": "Senior",
-      "salaryMinGbp": 51205,
-      "salaryMaxGbp": 51205,
-      "daysOpen": 36,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "Regulatory & QA"
-      ],
-      "postedSource": "Adzuna UK",
-      "applyUrl": "https://www.adzuna.co.uk/jobs/details/5937237235?utm_medium=api&utm_source=2aa98eca",
       "summary": "Build our future together: At Regeneron, we use science and innovation to develop life-changing medicines for people with serious diseases. We are seeking an Associate Manager, Regulatory Affairs to join our UK regional "
     },
     {
@@ -9029,27 +6173,6 @@
       "postedSource": "Adzuna UK",
       "applyUrl": "https://www.adzuna.co.uk/jobs/details/5947797203?utm_medium=api&utm_source=2aa98eca",
       "summary": "Science Teacher - Permanent Position - January 2027 Position: Science Teacher Start Date: January 2027 Location: Redhill, Surrey Contract Type: Full-time, Permanent Salary: £35,602 to £54,328 per annum High-Performing Se"
-    },
-    {
-      "id": "ADZ-5965190247",
-      "title": "Vice President, Regulatory Science",
-      "employer": "Parexel",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Regulatory & QA",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": 82647,
-      "salaryMaxGbp": 82647,
-      "daysOpen": 13,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "Regulatory & QA"
-      ],
-      "postedSource": "Adzuna UK",
-      "applyUrl": "https://www.adzuna.co.uk/jobs/details/5965190247?utm_medium=api&utm_source=2aa98eca",
-      "summary": "As one of our ex-FDA colleagues describes it: \"You get to see a lot of cool stuff very quickly\". If you're looking for the opportunity to influence the development strategies of pace-setting biopharma companies, there's "
     },
     {
       "id": "ADZ-5978576365",
@@ -9304,25 +6427,25 @@
       "summary": "The Digital Insights team helps clinical genomics laboratories turn complex genomic data into actionable insights, and this role sits within a global organization with thousands of employees across six continents. What y"
     },
     {
-      "id": "ADZ-5948746851",
-      "title": "Principal Clinical Scientist",
-      "employer": "CSL Behring",
-      "clusterId": "reading",
-      "clusterName": "Reading & Thames Valley",
-      "roleFamily": "Med Chem & DMPK",
+      "id": "ADZ-5896922556",
+      "title": "Senior Director, Intl Regulatory Affairs Geo-Expansion",
+      "employer": "Vertex Pharmaceuticals",
+      "clusterId": "london",
+      "clusterName": "London",
+      "roleFamily": "Regulatory & QA",
       "subSector": "Biotech",
       "seniority": "Principal / Director",
-      "salaryMinGbp": 49579,
-      "salaryMaxGbp": 49579,
-      "daysOpen": 26,
+      "salaryMinGbp": 52352,
+      "salaryMaxGbp": 52352,
+      "daysOpen": 64,
       "visaSponsorship": false,
       "hybridPolicy": "On-site Lab",
       "skills": [
-        "Med Chem & DMPK"
+        "Regulatory & QA"
       ],
       "postedSource": "Adzuna UK",
-      "applyUrl": "https://www.adzuna.co.uk/jobs/details/5948746851?utm_medium=api&utm_source=2aa98eca",
-      "summary": "Principal Clinical Scientist (Senior Clinical Scientist level also considered) The Role We're looking for a clinical scientist someone who has been the scientific lead for clinical studies before, from protocol developme"
+      "applyUrl": "https://www.adzuna.co.uk/jobs/details/5896922556?utm_medium=api&utm_source=2aa98eca",
+      "summary": "Job Description General Summary: The Senior Director, Regulatory Strategy International, is a regulatory leader with expert technical and tactical experience in regulatory strategy who will be responsible for overseeing "
     },
     {
       "id": "GJOB-eyJqb2JfdGl0bGUiOiJHcmFkdWF0ZSBDb25z",
@@ -9409,6 +6532,27 @@
       "summary": "Position: Biotech Contract Writer - Graduate Chemist STEM Recruitment in Glasgow/Strathclyde, Scotland is seeking a motivated Graduate Chemist with a biotechnology background to join our client’s team.You will prepare an"
     },
     {
+      "id": "GJOB-eyJqb2JfdGl0bGUiOiJHcmFkdWF0ZSBTY2ll",
+      "title": "Graduate Scientist – Biochem & Molecular Biology Lab",
+      "employer": "targetjobs UK",
+      "clusterId": "london",
+      "clusterName": "London",
+      "roleFamily": "Med Chem & DMPK",
+      "subSector": "Biotech",
+      "seniority": "Junior",
+      "salaryMinGbp": null,
+      "salaryMaxGbp": null,
+      "daysOpen": 5,
+      "visaSponsorship": false,
+      "hybridPolicy": "On-site Lab",
+      "skills": [
+        "Talents By StudySmarter"
+      ],
+      "postedSource": "Google Jobs (LinkedIn)",
+      "applyUrl": "https://talents.studysmarter.co.uk/companies/targetjobs-uk/eynsham/graduate-scientist-biochem-molecular-biology-lab-31732223/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "summary": "A leading biotechnology company is seeking Graduate Scientists in Eynsham, UK. Ideal candidates should have a degree in Biochemistry or a related field, with familiarity in protein biochemistry and molecular biology. Thi"
+    },
+    {
       "id": "GJOB-eyJqb2JfdGl0bGUiOiJBc3NvY2lhdGUgc2Np",
       "title": "Associate scientist graduate placement -UCB",
       "employer": "UCB",
@@ -9489,29 +6633,8 @@
         "Learn4Good"
       ],
       "postedSource": "Google Jobs (LinkedIn)",
-      "applyUrl": "https://www.learn4good.com/jobs/coventry/uk/research_and_development/5654160969/e/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "applyUrl": "https://www.learn4good.com/jobs/leicester/uk/research_and_development/5654216710/e/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
       "summary": "Direct message the job poster from Cozens WainConnecting the Best A-Players - Top 1% in Life Sciences 🧬Scientist | Seed-Funded Agri Tech Startup | £7M+ Raised 💰About the CompanyWe’re excited to be partnering with a See"
-    },
-    {
-      "id": "GJOB-eyJqb2JfdGl0bGUiOiJQdWJsaXNoaW5nIERl",
-      "title": "Publishing Development Specialist  Life Sciences, Biotechnology & Environment",
-      "employer": "Frontiers",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 5,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "Totaljobs"
-      ],
-      "postedSource": "Google Jobs (LinkedIn)",
-      "applyUrl": "https://www.totaljobs.com/job/publishing-development-specialist-life-sciences-biotechnology-environment/frontiers-job108353710?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "summary": "Who we are At Frontiers, we are on a mission to make science open. Most research today sits behind paywalls, meaning only people at well-funded universities or those who can pay get to read it. Open access flips that: ev"
     },
     {
       "id": "GJOB-eyJqb2JfdGl0bGUiOiJSZXNlYXJjaCBhbmQg",
@@ -9533,27 +6656,6 @@
       "postedSource": "Google Jobs (LinkedIn)",
       "applyUrl": "https://talents.studysmarter.co.uk/companies/astrazeneca-uk-limited/hartford/research-and-development-rd-data-sciences-ai-graduate-programme-uk-19866206/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
       "summary": "Professional Growth: Develop both industry-specific and technical knowledge, supported by a mentor and a dedicated programme management team. Networking: Build collaborative relationships with specialists and leaders wit"
-    },
-    {
-      "id": "GJOB-eyJqb2JfdGl0bGUiOiJCaW9pbmZvcm1hdGlj",
-      "title": "Bioinformatician",
-      "employer": "Queen Mary University of London",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Bioinformatics & AI",
-      "subSector": "Research Inst.",
-      "seniority": "Mid",
-      "salaryMinGbp": null,
-      "salaryMaxGbp": null,
-      "daysOpen": 5,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "Jobs.ac.uk"
-      ],
-      "postedSource": "Google Jobs (LinkedIn)",
-      "applyUrl": "https://www.jobs.ac.uk/job/DTM617/bioinformatician?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "summary": "About the Role We are seeking a talented and dedicated bioinformatician to join the ground-breaking PharosAI initiative – a £43.6M national programme co-led by Queen Mary University of London. Read more about the initiat"
     },
     {
       "id": "GJOB-eyJqb2JfdGl0bGUiOiJTZW5pb3IgQmlvaW5m",
@@ -9598,9 +6700,30 @@
       "summary": "The University of Surrey is a global community of ideas and people, dedicated to life-changing education and research. We are ambitious and have a bold vision of what we want to achieve - shaping ourselves into one of th"
     },
     {
-      "id": "GJOB-eyJqb2JfdGl0bGUiOiJDb21wdXRhdGlvbmFs",
-      "title": "Computational Biology",
-      "employer": "University of Liverpool",
+      "id": "GJOB-eyJqb2JfdGl0bGUiOiJCaW9pbmZvcm1hdGlj",
+      "title": "Bioinformatician – Molecular Diagnostics",
+      "employer": "QIAGEN",
+      "clusterId": "manchester",
+      "clusterName": "Manchester",
+      "roleFamily": "Bioinformatics & AI",
+      "subSector": "MedTech",
+      "seniority": "Mid",
+      "salaryMinGbp": null,
+      "salaryMaxGbp": null,
+      "daysOpen": 5,
+      "visaSponsorship": false,
+      "hybridPolicy": "On-site Lab",
+      "skills": [
+        "LinkedIn"
+      ],
+      "postedSource": "Google Jobs (LinkedIn)",
+      "applyUrl": "https://uk.linkedin.com/jobs/view/bioinformatician-%E2%80%93-molecular-diagnostics-at-qiagen-4486047061?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "summary": "Overview At QIAGEN, we are driven by a simple but powerful vision: making improvements in life possible. We’re dedicated to revolutionizing science and healthcare for the better. From our entrepreneurial roots to our cur"
+    },
+    {
+      "id": "GJOB-eyJqb2JfdGl0bGUiOiJTZWxmLWZ1bmRlZCBQ",
+      "title": "Self-funded PhD - The genomic basis of major evolutionary transitions",
+      "employer": "University of Bristol",
       "clusterId": "london",
       "clusterName": "London",
       "roleFamily": "Bioinformatics & AI",
@@ -9612,980 +6735,11 @@
       "visaSponsorship": false,
       "hybridPolicy": "On-site Lab",
       "skills": [
-        "PhDScanner"
+        "Find A PhD"
       ],
       "postedSource": "Google Jobs (LinkedIn)",
-      "applyUrl": "https://www.phdscanner.com/opportunities/phd-vacancies-university-of-liverpool-united-kingdom-computational-biology-cb24054a-6690-4339-baeb-542225d1e6c7?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "summary": "PhD position in Computational Biology focusing on data-driven biological insights. Candidates should have a relevant 2:1 UK degree and master's. Research topics include bioinformatics and biomarker discovery."
-    },
-    {
-      "id": "UK-LS-101",
-      "title": "Senior Computational Chemist (Generative Diffusion)",
-      "employer": "Isomorphic Labs",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Bioinformatics & AI",
-      "subSector": "Biotech",
-      "seniority": "Senior",
-      "salaryMinGbp": 92000,
-      "salaryMaxGbp": 118000,
-      "daysOpen": 14,
-      "visaSponsorship": true,
-      "hybridPolicy": "Hybrid 3d",
-      "skills": [
-        "PyTorch",
-        "Molecular Docking",
-        "FEP+",
-        "Python",
-        "JAX"
-      ],
-      "isFeaturedPin": true,
-      "postedSource": "Direct Career Page",
-      "summary": "Develop structure-based generative models and active-learning loops with medicinal chemistry teams in King’s Cross."
-    },
-    {
-      "id": "UK-LS-102",
-      "title": "Principal Bioinformatician — Spatial Transcriptomics",
-      "employer": "AstraZeneca",
-      "clusterId": "cambridge",
-      "clusterName": "Cambridge",
-      "roleFamily": "Bioinformatics & AI",
-      "subSector": "Big Pharma",
-      "seniority": "Principal / Director",
-      "salaryMinGbp": 88000,
-      "salaryMaxGbp": 108000,
-      "daysOpen": 21,
-      "visaSponsorship": true,
-      "hybridPolicy": "Hybrid 3d",
-      "skills": [
-        "Nextflow",
-        "Single-Cell RNA-seq",
-        "R/Bioconductor",
-        "AWS Batch"
-      ],
-      "postedSource": "Adzuna UK",
-      "summary": "Lead spatial omics target validation pipelines across early oncology programs at The Discovery Centre."
-    },
-    {
-      "id": "UK-LS-103",
-      "title": "Upstream Bioprocess Engineer (Lentiviral Vector)",
-      "employer": "Autolus Therapeutics",
-      "clusterId": "stevenage",
-      "clusterName": "Stevenage",
-      "roleFamily": "Bioprocess & CGT",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": 48000,
-      "salaryMaxGbp": 58000,
-      "daysOpen": 19,
-      "visaSponsorship": true,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "GMP Cleanroom",
-        "Single-Use Bioreactors",
-        "Tech Transfer",
-        "DoE"
-      ],
-      "isFeaturedPin": true,
-      "postedSource": "Direct Career Page",
-      "summary": "Execute scale-up and PPQ runs for commercial autologous CAR-T viral vector production in Stevenage Nucleus."
-    },
-    {
-      "id": "UK-LS-104",
-      "title": "HEOR & NICE Market Access Manager (Oncology)",
-      "employer": "GSK",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Medical Affairs & HEOR",
-      "subSector": "Big Pharma",
-      "seniority": "Senior",
-      "salaryMinGbp": 78000,
-      "salaryMaxGbp": 94000,
-      "daysOpen": 26,
-      "visaSponsorship": false,
-      "hybridPolicy": "Hybrid 2d",
-      "skills": [
-        "NICE STA Dossiers",
-        "QALY Modelling",
-        "R/TreeAge",
-        "PAS Strategy"
-      ],
-      "postedSource": "Reed Science",
-      "summary": "Lead UK HTA economic modelling and NICE/SMC submissions for solid tumour biologics."
-    },
-    {
-      "id": "UK-LS-105",
-      "title": "Associate Scientist — Protein Mass Spectrometry",
-      "employer": "OMass Therapeutics",
-      "clusterId": "oxford",
-      "clusterName": "Oxford",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Junior",
-      "salaryMinGbp": 34000,
-      "salaryMaxGbp": 40000,
-      "daysOpen": 11,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "Native MS",
-        "LC-MS/MS",
-        "GPCR Biochemistry",
-        "Proteomics"
-      ],
-      "postedSource": "Adzuna UK",
-      "summary": "Operate high-resolution Orbitrap native mass spectrometry platforms for membrane protein drug discovery."
-    },
-    {
-      "id": "UK-LS-106",
-      "title": "Senior Synthetic Medicinal Chemist",
-      "employer": "Sygnature Discovery",
-      "clusterId": "alderley",
-      "clusterName": "Alderley Park & Cheshire",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Senior",
-      "salaryMinGbp": 52000,
-      "salaryMaxGbp": 63000,
-      "daysOpen": 34,
-      "visaSponsorship": true,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "Multi-step Synthesis",
-        "SAR Design",
-        "PROTACs",
-        "NMR"
-      ],
-      "postedSource": "Reed Science",
-      "summary": "Drive hit-to-lead and lead-optimisation synthetic campaigns for partnered European and US biotech clients."
-    },
-    {
-      "id": "UK-LS-107",
-      "title": "Machine Learning Scientist — Peptide Conjugates",
-      "employer": "Bicycle Therapeutics",
-      "clusterId": "cambridge",
-      "clusterName": "Cambridge",
-      "roleFamily": "Bioinformatics & AI",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": 62000,
-      "salaryMaxGbp": 76000,
-      "daysOpen": 17,
-      "visaSponsorship": true,
-      "hybridPolicy": "Hybrid 3d",
-      "skills": [
-        "Python",
-        "RDKit",
-        "Graph Neural Networks",
-        "Phage Display Data"
-      ],
-      "isFeaturedPin": true,
-      "postedSource": "Direct Career Page",
-      "summary": "Build predictive affinity and ADME models from high-throughput Bicycle phage screening libraries."
-    },
-    {
-      "id": "UK-LS-108",
-      "title": "Clinical Trial Manager — Phase II/III Oncology",
-      "employer": "MSD UK",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Clinical Trials & Ops",
-      "subSector": "Big Pharma",
-      "seniority": "Senior",
-      "salaryMinGbp": 68000,
-      "salaryMaxGbp": 82000,
-      "daysOpen": 29,
-      "visaSponsorship": false,
-      "hybridPolicy": "Hybrid 2d",
-      "skills": [
-        "ICH-GCP",
-        "MHRA CTA",
-        "NHS Trust Contracting",
-        "eTMF"
-      ],
-      "postedSource": "Adzuna UK",
-      "summary": "Oversee UK multi-centre NHS Trust site activation and recruitment timelines for immuno-oncology studies."
-    },
-    {
-      "id": "UK-LS-109",
-      "title": "Regulatory Affairs Specialist (UKCA & AI SaMD)",
-      "employer": "Oxford Nanopore Technologies",
-      "clusterId": "oxford",
-      "clusterName": "Oxford",
-      "roleFamily": "Regulatory & QA",
-      "subSector": "MedTech",
-      "seniority": "Mid",
-      "salaryMinGbp": 50000,
-      "salaryMaxGbp": 62000,
-      "daysOpen": 44,
-      "visaSponsorship": true,
-      "hybridPolicy": "Hybrid 3d",
-      "skills": [
-        "IVDR / UKCA",
-        "MHRA Guidelines",
-        "ISO 13485",
-        "Software SaMD"
-      ],
-      "isFeaturedPin": true,
-      "postedSource": "Direct Career Page",
-      "summary": "Manage diagnostic regulatory submissions for real-time nanopore sequencing assays and clinical basecallers."
-    },
-    {
-      "id": "UK-LS-110",
-      "title": "Downstream Process Scientist — Cell Therapy",
-      "employer": "RoslinCT",
-      "clusterId": "edinburgh",
-      "clusterName": "Edinburgh",
-      "roleFamily": "Bioprocess & CGT",
-      "subSector": "CRO / CDMO",
-      "seniority": "Mid",
-      "salaryMinGbp": 41000,
-      "salaryMaxGbp": 49000,
-      "daysOpen": 28,
-      "visaSponsorship": true,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "iPSC Differentiation",
-        "Cryopreservation",
-        "Closed Systems",
-        "GMP"
-      ],
-      "postedSource": "Adzuna UK",
-      "summary": "Develop closed-system harvest and cryopreservation workflows for iPSC-derived cell therapy batches."
-    },
-    {
-      "id": "UK-LS-111",
-      "title": "Genomic Assay Validation Scientist",
-      "employer": "QIAGEN",
-      "clusterId": "manchester",
-      "clusterName": "Manchester",
-      "roleFamily": "MedTech & Diagnostics",
-      "subSector": "MedTech",
-      "seniority": "Mid",
-      "salaryMinGbp": 42000,
-      "salaryMaxGbp": 51000,
-      "daysOpen": 22,
-      "visaSponsorship": true,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "qPCR / dPCR",
-        "NGS Library Prep",
-        "Companion Diagnostics",
-        "CLIA"
-      ],
-      "postedSource": "Reed Science",
-      "summary": "Execute analytical validation protocols for oncology companion diagnostic kits at Citylabs."
-    },
-    {
-      "id": "UK-LS-112",
-      "title": "Qualified Person (QP) — Biologics & Steriles",
-      "employer": "Almac Group",
-      "clusterId": "belfast",
-      "clusterName": "Belfast & Craigavon",
-      "roleFamily": "Regulatory & QA",
-      "subSector": "CRO / CDMO",
-      "seniority": "Principal / Director",
-      "salaryMinGbp": 85000,
-      "salaryMaxGbp": 105000,
-      "daysOpen": 68,
-      "visaSponsorship": false,
-      "hybridPolicy": "Hybrid 3d",
-      "skills": [
-        "EU/UK QP Certification",
-        "Annex 1 Steriles",
-        "Batch Release",
-        "Windsor Framework"
-      ],
-      "postedSource": "Adzuna UK",
-      "summary": "Certify commercial and IMP biologic batches across dual UK and EU regulatory release pathways."
-    },
-    {
-      "id": "UK-LS-113",
-      "title": "Medical Science Liaison — Cardiometabolic",
-      "employer": "AbbVie UK",
-      "clusterId": "reading",
-      "clusterName": "Reading & Thames Valley",
-      "roleFamily": "Medical Affairs & HEOR",
-      "subSector": "Big Pharma",
-      "seniority": "Senior",
-      "salaryMinGbp": 68000,
-      "salaryMaxGbp": 79000,
-      "daysOpen": 16,
-      "visaSponsorship": false,
-      "hybridPolicy": "Remote UK",
-      "skills": [
-        "KOL Engagement",
-        "ABPI Code",
-        "NHS ICB Pathways",
-        "Phase IV Evidence"
-      ],
-      "postedSource": "Reed Science",
-      "summary": "Partner with NHS lipid and heart failure clinical leads on real-world NICE pathway implementation."
-    },
-    {
-      "id": "UK-LS-114",
-      "title": "Junior Research Associate — Genomics Core",
-      "employer": "Wellcome Sanger Institute",
-      "clusterId": "cambridge",
-      "clusterName": "Cambridge",
-      "roleFamily": "Bioinformatics & AI",
-      "subSector": "Research Inst.",
-      "seniority": "Junior",
-      "salaryMinGbp": 31500,
-      "salaryMaxGbp": 36500,
-      "daysOpen": 12,
-      "visaSponsorship": true,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "NGS QC",
-        "Liquid Handling Robotics",
-        "Python Basics",
-        "LIMS"
-      ],
-      "postedSource": "Direct Career Page",
-      "summary": "Support high-throughput single-cell sequencing and automated sample prep on the Wellcome Genome Campus."
-    },
-    {
-      "id": "UK-LS-115",
-      "title": "Automated Screening & Cheminformatics Scientist",
-      "employer": "Recursion UK",
-      "clusterId": "dundee",
-      "clusterName": "Dundee",
-      "roleFamily": "Bioinformatics & AI",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": 48000,
-      "salaryMaxGbp": 59000,
-      "daysOpen": 31,
-      "visaSponsorship": true,
-      "hybridPolicy": "Hybrid 3d",
-      "skills": [
-        "Python",
-        "High-Content Imaging",
-        "KNIME",
-        "SAR Analytics"
-      ],
-      "postedSource": "Adzuna UK",
-      "summary": "Integrate automated phenomic assay readouts with active-learning generative chemistry pipelines."
-    },
-    {
-      "id": "UK-LS-116",
-      "title": "Formulation Scientist — Oral Peptide Delivery",
-      "employer": "Quotient Sciences",
-      "clusterId": "nottingham",
-      "clusterName": "Nottingham",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Mid",
-      "salaryMinGbp": 39000,
-      "salaryMaxGbp": 47000,
-      "daysOpen": 25,
-      "visaSponsorship": true,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "Spray Drying",
-        "GMP Clinical Mfg",
-        "Dissolution Testing",
-        "QbD"
-      ],
-      "postedSource": "Adzuna UK",
-      "summary": "Develop Phase I translational pharmaceutics formulations linking real-time GMP compounding to clinical PK."
-    },
-    {
-      "id": "UK-LS-117",
-      "title": "R&D Systems Engineer — Surgical Robotics",
-      "employer": "DePuy Synthes (J&J)",
-      "clusterId": "leeds",
-      "clusterName": "Leeds & Bradford",
-      "roleFamily": "MedTech & Diagnostics",
-      "subSector": "MedTech",
-      "seniority": "Senior",
-      "salaryMinGbp": 58000,
-      "salaryMaxGbp": 70000,
-      "daysOpen": 39,
-      "visaSponsorship": true,
-      "hybridPolicy": "Hybrid 3d",
-      "skills": [
-        "IEC 62304",
-        "Control Systems",
-        "C++ / MATLAB",
-        "Design History File"
-      ],
-      "postedSource": "Reed Science",
-      "summary": "Lead verification and risk management (ISO 14971) for orthopaedic navigation and robotic-assisted surgery systems."
-    },
-    {
-      "id": "UK-LS-118",
-      "title": "Analytical QC Microbiologist",
-      "employer": "Thermo Fisher Scientific",
-      "clusterId": "glasgow",
-      "clusterName": "Glasgow",
-      "roleFamily": "Regulatory & QA",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 29500,
-      "salaryMaxGbp": 34500,
-      "daysOpen": 18,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "Endotoxin Testing",
-        "Environmental Monitoring",
-        "GMP Documentation",
-        "Bioburden"
-      ],
-      "postedSource": "Adzuna UK",
-      "summary": "Perform routine bioburden, sterility, and cleanroom monitoring for biologic cell culture media manufacturing."
-    },
-    {
-      "id": "UK-LS-119",
-      "title": "Director of Clinical Operations — Rare Disease",
-      "employer": "UCB Pharma",
-      "clusterId": "reading",
-      "clusterName": "Reading & Thames Valley",
-      "roleFamily": "Clinical Trials & Ops",
-      "subSector": "Big Pharma",
-      "seniority": "Principal / Director",
-      "salaryMinGbp": 105000,
-      "salaryMaxGbp": 128000,
-      "daysOpen": 47,
-      "visaSponsorship": true,
-      "hybridPolicy": "Hybrid 2d",
-      "skills": [
-        "Global Trial Strategy",
-        "CRO Oversight",
-        "Patient Advocacy",
-        "Budgeting"
-      ],
-      "postedSource": "Direct Career Page",
-      "summary": "Direct European Phase II/III neuromuscular and epilepsy trials from UCB’s Slough/Thames Valley hub."
-    },
-    {
-      "id": "UK-LS-120",
-      "title": "Immunodiagnostics Assay Scientist",
-      "employer": "The Binding Site (Thermo)",
-      "clusterId": "birmingham",
-      "clusterName": "Birmingham",
-      "roleFamily": "MedTech & Diagnostics",
-      "subSector": "MedTech",
-      "seniority": "Mid",
-      "salaryMinGbp": 38000,
-      "salaryMaxGbp": 46000,
-      "daysOpen": 23,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "ELISA / Turbidimetry",
-        "Antibody Conjugation",
-        "IVDR Technical Files"
-      ],
-      "postedSource": "Reed Science",
-      "summary": "Develop next-generation multiple myeloma and immunodeficiency automated analyser reagents."
-    },
-    {
-      "id": "UK-LS-121",
-      "title": "Process Chemistry Team Leader (API Scale-Up)",
-      "employer": "CatSci",
-      "clusterId": "cardiff",
-      "clusterName": "Cardiff",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "CRO / CDMO",
-      "seniority": "Senior",
-      "salaryMinGbp": 54000,
-      "salaryMaxGbp": 65000,
-      "daysOpen": 36,
-      "visaSponsorship": true,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "Route Scouting",
-        "Calorimetry / Process Safety",
-        "Crystallisation",
-        "HPLC"
-      ],
-      "postedSource": "Adzuna UK",
-      "summary": "Lead route design and non-GMP/GMP scale-up chemistry for small-molecule and oligonucleotide intermediates."
-    },
-    {
-      "id": "UK-LS-122",
-      "title": "De Novo Protein Design Scientist",
-      "employer": "Imophoron",
-      "clusterId": "bristol",
-      "clusterName": "Bristol & Bath",
-      "roleFamily": "Bioinformatics & AI",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": 49000,
-      "salaryMaxGbp": 59000,
-      "daysOpen": 20,
-      "visaSponsorship": true,
-      "hybridPolicy": "Hybrid 3d",
-      "skills": [
-        "RFdiffusion",
-        "AlphaFold3",
-        "Protein Expression",
-        "Structural Biology"
-      ],
-      "postedSource": "Direct Career Page",
-      "summary": "Engineer thermostable ADDomer nanoparticle vaccines using generative protein structure tools at Science Creates."
-    },
-    {
-      "id": "UK-LS-123",
-      "title": "Real-World Evidence (RWE) Data Scientist — NHS",
-      "employer": "IQVIA UK",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Medical Affairs & HEOR",
-      "subSector": "CRO / CDMO",
-      "seniority": "Mid",
-      "salaryMinGbp": 56000,
-      "salaryMaxGbp": 69000,
-      "daysOpen": 15,
-      "visaSponsorship": true,
-      "hybridPolicy": "Hybrid 2d",
-      "skills": [
-        "CPRD / HES Data",
-        "SQL / Python",
-        "Propensity Matching",
-        "NICE RWE"
-      ],
-      "postedSource": "Adzuna UK",
-      "summary": "Analyse NHS CPRD and hospital episode statistics to support NICE managed access re-evaluations."
-    },
-    {
-      "id": "UK-LS-124",
-      "title": "MSAT Downstream Purification Lead",
-      "employer": "Cell & Gene Therapy Catapult",
-      "clusterId": "stevenage",
-      "clusterName": "Stevenage",
-      "roleFamily": "Bioprocess & CGT",
-      "subSector": "Research Inst.",
-      "seniority": "Senior",
-      "salaryMinGbp": 58000,
-      "salaryMaxGbp": 68000,
-      "daysOpen": 41,
-      "visaSponsorship": true,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "AKTA TFF / Chromatography",
-        "AAV Purification",
-        "PAT Sensors",
-        "GMP"
-      ],
-      "postedSource": "Direct Career Page",
-      "summary": "Advise collaborator biotechs on AAV vector downstream intensification inside the Stevenage manufacturing centre."
-    },
-    {
-      "id": "UK-LS-125",
-      "title": "DMPK Bioanalyst — In Vitro ADME",
-      "employer": "Evox Therapeutics",
-      "clusterId": "oxford",
-      "clusterName": "Oxford",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": 45000,
-      "salaryMaxGbp": 54000,
-      "daysOpen": 27,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "PK/PD Modelling",
-        "Exosome Assays",
-        "LC-MS",
-        "Flow Cytometry"
-      ],
-      "postedSource": "Adzuna UK",
-      "summary": "Characterise tissue distribution and cargo delivery kinetics for engineered exosome therapeutics."
-    },
-    {
-      "id": "UK-LS-126",
-      "title": "Clinical Data Coordinator (Entry Level)",
-      "employer": "Charles River Laboratories",
-      "clusterId": "edinburgh",
-      "clusterName": "Edinburgh",
-      "roleFamily": "Clinical Trials & Ops",
-      "subSector": "CRO / CDMO",
-      "seniority": "Junior",
-      "salaryMinGbp": 28000,
-      "salaryMaxGbp": 33000,
-      "daysOpen": 13,
-      "visaSponsorship": false,
-      "hybridPolicy": "Hybrid 3d",
-      "skills": [
-        "CDISC SDTM",
-        "Medidata Rave",
-        "GLP / GCP",
-        "SAS Basics"
-      ],
-      "postedSource": "Reed Science",
-      "summary": "Support study build, data cleaning, and query resolution for preclinical and Phase I toxicology programmes."
-    },
-    {
-      "id": "UK-LS-127",
-      "title": "Head of Regulatory Strategy — Oncology Biologics",
-      "employer": "AstraZeneca",
-      "clusterId": "cambridge",
-      "clusterName": "Cambridge",
-      "roleFamily": "Regulatory & QA",
-      "subSector": "Big Pharma",
-      "seniority": "Principal / Director",
-      "salaryMinGbp": 112000,
-      "salaryMaxGbp": 138000,
-      "daysOpen": 63,
-      "visaSponsorship": true,
-      "hybridPolicy": "Hybrid 3d",
-      "skills": [
-        "MHRA ILAP",
-        "EMA MAA",
-        "Project Orbis",
-        "ADC CMC"
-      ],
-      "postedSource": "Direct Career Page",
-      "summary": "Shape global regulatory strategy across MHRA Project Orbis, FDA, and EMA for late-stage antibody-drug conjugates."
-    },
-    {
-      "id": "UK-LS-128",
-      "title": "Automation & High-Throughput Screening Engineer",
-      "employer": "Medicines Discovery Catapult",
-      "clusterId": "alderley",
-      "clusterName": "Alderley Park & Cheshire",
-      "roleFamily": "MedTech & Diagnostics",
-      "subSector": "Research Inst.",
-      "seniority": "Mid",
-      "salaryMinGbp": 44000,
-      "salaryMaxGbp": 53000,
-      "daysOpen": 30,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "Hamilton / Tecan",
-        "Acoustic Dispensing",
-        "Python API",
-        "Assay Robotics"
-      ],
-      "postedSource": "Adzuna UK",
-      "summary": "Program automated cell-painting and acoustic liquid handling workflows for UK SME drug discovery projects."
-    },
-    {
-      "id": "UK-LS-129",
-      "title": "Clinical Bioinformatics Analyst (NHS Genomic Hub)",
-      "employer": "Yourgene Health",
-      "clusterId": "manchester",
-      "clusterName": "Manchester",
-      "roleFamily": "Bioinformatics & AI",
-      "subSector": "MedTech",
-      "seniority": "Mid",
-      "salaryMinGbp": 45000,
-      "salaryMaxGbp": 55000,
-      "daysOpen": 19,
-      "visaSponsorship": true,
-      "hybridPolicy": "Hybrid 3d",
-      "skills": [
-        "Variant Calling",
-        "Python / Snakemake",
-        "NIPT Pipelines",
-        "ISO 15189"
-      ],
-      "postedSource": "Adzuna UK",
-      "summary": "Maintain clinical-grade NIPT and oncology ctDNA sequencing bioinformatics pipelines."
-    },
-    {
-      "id": "UK-LS-130",
-      "title": "Senior QA Specialist — GMP Biologics",
-      "employer": "Quell Therapeutics",
-      "clusterId": "stevenage",
-      "clusterName": "Stevenage",
-      "roleFamily": "Regulatory & QA",
-      "subSector": "Biotech",
-      "seniority": "Senior",
-      "salaryMinGbp": 56000,
-      "salaryMaxGbp": 67000,
-      "daysOpen": 33,
-      "visaSponsorship": true,
-      "hybridPolicy": "Hybrid 3d",
-      "skills": [
-        "Deviation / CAPA",
-        "Veeva Vault QMS",
-        "ATMP Annex 2",
-        "Auditing"
-      ],
-      "postedSource": "Reed Science",
-      "summary": "Support clinical CAR-Treg batch disposition and QMS readiness for Phase I/II European trials."
-    },
-    {
-      "id": "UK-LS-131",
-      "title": "Graduate Assay Scientist — Antibody Engineering",
-      "employer": "Abcam",
-      "clusterId": "cambridge",
-      "clusterName": "Cambridge",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Junior",
-      "salaryMinGbp": 32000,
-      "salaryMaxGbp": 37000,
-      "daysOpen": 9,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "IHC / Western Blot",
-        "Flow Cytometry",
-        "Recombinant Cloning"
-      ],
-      "postedSource": "Direct Career Page",
-      "summary": "Validate recombinant monoclonal antibodies across oncology and neuroscience cell lines on Cambridge Biomedical Campus."
-    },
-    {
-      "id": "UK-LS-132",
-      "title": "Pharmacovigilance Physician / Medical Director",
-      "employer": "Bayer UK",
-      "clusterId": "reading",
-      "clusterName": "Reading & Thames Valley",
-      "roleFamily": "Medical Affairs & HEOR",
-      "subSector": "Big Pharma",
-      "seniority": "Principal / Director",
-      "salaryMinGbp": 115000,
-      "salaryMaxGbp": 142000,
-      "daysOpen": 71,
-      "visaSponsorship": false,
-      "hybridPolicy": "Hybrid 2d",
-      "skills": [
-        "GMC Registered",
-        "Signal Detection",
-        "PSUR / RMP",
-        "MHRA Safety"
-      ],
-      "postedSource": "Adzuna UK",
-      "summary": "Lead UK benefit-risk evaluation and MHRA safety governance across cardiovascular and women’s health portfolios."
-    },
-    {
-      "id": "UK-LS-133",
-      "title": "MLOps Engineer — Multimodal Clinical Imaging",
-      "employer": "BenevolentAI",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Bioinformatics & AI",
-      "subSector": "Biotech",
-      "seniority": "Senior",
-      "salaryMinGbp": 84000,
-      "salaryMaxGbp": 102000,
-      "daysOpen": 24,
-      "visaSponsorship": true,
-      "hybridPolicy": "Hybrid 3d",
-      "skills": [
-        "Kubernetes",
-        "Ray / MLflow",
-        "GCP",
-        "DICOM / Pathology AI"
-      ],
-      "postedSource": "Adzuna UK",
-      "summary": "Scale distributed GPU training and reproducible data lineage for knowledge-graph target identification."
-    },
-    {
-      "id": "UK-LS-134",
-      "title": "Bioprocess Development Engineer (mRNA/LNP)",
-      "employer": "Francis Crick / Spin-out Partner",
-      "clusterId": "london",
-      "clusterName": "London",
-      "roleFamily": "Bioprocess & CGT",
-      "subSector": "Research Inst.",
-      "seniority": "Mid",
-      "salaryMinGbp": 50000,
-      "salaryMaxGbp": 61000,
-      "daysOpen": 22,
-      "visaSponsorship": true,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "Microfluidic Mixing",
-        "LNP Encapsulation",
-        "DLS / RiboGreen",
-        "IVT"
-      ],
-      "postedSource": "Direct Career Page",
-      "summary": "Optimise lipid nanoparticle microfluidic encapsulation and stability for translational RNA therapeutics."
-    },
-    {
-      "id": "UK-LS-135",
-      "title": "Senior Clinical Trial Data Manager",
-      "employer": "AstraZeneca",
-      "clusterId": "cambridge",
-      "clusterName": "Cambridge",
-      "roleFamily": "Clinical Trials & Ops",
-      "subSector": "Big Pharma",
-      "seniority": "Senior",
-      "salaryMinGbp": 64000,
-      "salaryMaxGbp": 78000,
-      "daysOpen": 35,
-      "visaSponsorship": true,
-      "hybridPolicy": "Hybrid 3d",
-      "skills": [
-        "EDC Build",
-        "CDASH / ODM",
-        "Risk-Based Monitoring",
-        "Python/SAS"
-      ],
-      "postedSource": "Adzuna UK",
-      "summary": "Own end-to-end clinical data standards and automated discrepancy checks for Phase III respiratory trials."
-    },
-    {
-      "id": "UK-LS-136",
-      "title": "Companion Diagnostics Product Manager",
-      "employer": "Randox Laboratories",
-      "clusterId": "belfast",
-      "clusterName": "Belfast & Craigavon",
-      "roleFamily": "MedTech & Diagnostics",
-      "subSector": "MedTech",
-      "seniority": "Senior",
-      "salaryMinGbp": 52000,
-      "salaryMaxGbp": 64000,
-      "daysOpen": 28,
-      "visaSponsorship": false,
-      "hybridPolicy": "Hybrid 3d",
-      "skills": [
-        "Biochip Arrays",
-        "NHS Procurement",
-        "CE/UKCA IVD",
-        "Commercial Launch"
-      ],
-      "postedSource": "Reed Science",
-      "summary": "Drive NHS Trust and pharma co-development partnerships for multiplex point-of-care diagnostic panels."
-    },
-    {
-      "id": "UK-LS-137",
-      "title": "In Vivo Pharmacology Scientist",
-      "employer": "Infex Therapeutics",
-      "clusterId": "alderley",
-      "clusterName": "Alderley Park & Cheshire",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Mid",
-      "salaryMinGbp": 39000,
-      "salaryMaxGbp": 47000,
-      "daysOpen": 42,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "Home Office PIL",
-        "AMR Infection Models",
-        "PK Sampling",
-        "Microbiology"
-      ],
-      "postedSource": "Adzuna UK",
-      "summary": "Design and execute preclinical efficacy and PK studies for novel anti-infective candidates."
-    },
-    {
-      "id": "UK-LS-138",
-      "title": "Statistical Programmer (Biostatistics)",
-      "employer": "Simbec-Orion",
-      "clusterId": "cardiff",
-      "clusterName": "Cardiff",
-      "roleFamily": "Clinical Trials & Ops",
-      "subSector": "CRO / CDMO",
-      "seniority": "Mid",
-      "salaryMinGbp": 44000,
-      "salaryMaxGbp": 55000,
-      "daysOpen": 26,
-      "visaSponsorship": false,
-      "hybridPolicy": "Remote UK",
-      "skills": [
-        "SAS",
-        "CDISC ADaM",
-        "TLF Generation",
-        "R Shiny"
-      ],
-      "postedSource": "Reed Science",
-      "summary": "Produce SDTM/ADaM datasets and regulatory submission tables for Phase I/II rare disease studies."
-    },
-    {
-      "id": "UK-LS-139",
-      "title": "Senior Protein Crystallographer",
-      "employer": "Immunocore",
-      "clusterId": "oxford",
-      "clusterName": "Oxford",
-      "roleFamily": "Med Chem & DMPK",
-      "subSector": "Biotech",
-      "seniority": "Senior",
-      "salaryMinGbp": 58000,
-      "salaryMaxGbp": 72000,
-      "daysOpen": 38,
-      "visaSponsorship": true,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "X-Ray Crystallography",
-        "Diamond Light Source",
-        "Cryo-EM",
-        "TCR Engineering"
-      ],
-      "postedSource": "Direct Career Page",
-      "summary": "Solve high-resolution TCR-pHLA complexes leveraging Diamond Light Source beamlines at Harwell/Milton Park."
-    },
-    {
-      "id": "UK-LS-140",
-      "title": "NHS Market Access & Pricing Analyst",
-      "employer": "Johnson & Johnson Innovative Medicine",
-      "clusterId": "reading",
-      "clusterName": "Reading & Thames Valley",
-      "roleFamily": "Medical Affairs & HEOR",
-      "subSector": "Big Pharma",
-      "seniority": "Mid",
-      "salaryMinGbp": 52000,
-      "salaryMaxGbp": 63000,
-      "daysOpen": 18,
-      "visaSponsorship": false,
-      "hybridPolicy": "Hybrid 3d",
-      "skills": [
-        "VPAG Rebates",
-        "Budget Impact Models",
-        "NHSBSA Prescribing",
-        "Excel/R"
-      ],
-      "postedSource": "Adzuna UK",
-      "summary": "Model NHS budget impact, VPAG rebate exposure, and sub-national ICB uptake trajectories."
-    },
-    {
-      "id": "UK-LS-141",
-      "title": "Microfluidics & Hardware R&D Engineer",
-      "employer": "Oxford Nanopore Technologies",
-      "clusterId": "oxford",
-      "clusterName": "Oxford",
-      "roleFamily": "MedTech & Diagnostics",
-      "subSector": "MedTech",
-      "seniority": "Senior",
-      "salaryMinGbp": 60000,
-      "salaryMaxGbp": 74000,
-      "daysOpen": 31,
-      "visaSponsorship": true,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "MEMS / Microfluidics",
-        "ASIC Packaging",
-        "COMSOL",
-        "DFM"
-      ],
-      "postedSource": "Direct Career Page",
-      "summary": "Architect high-density flow cell cartridges for ultra-long-read clinical sequencing systems."
-    },
-    {
-      "id": "UK-LS-142",
-      "title": "Graduate Bioprocess Technician",
-      "employer": "GSK",
-      "clusterId": "stevenage",
-      "clusterName": "Stevenage",
-      "roleFamily": "Bioprocess & CGT",
-      "subSector": "Big Pharma",
-      "seniority": "Junior",
-      "salaryMinGbp": 32500,
-      "salaryMaxGbp": 37500,
-      "daysOpen": 10,
-      "visaSponsorship": false,
-      "hybridPolicy": "On-site Lab",
-      "skills": [
-        "Cell Culture",
-        "Aseptic Technique",
-        "Bioreactor Monitoring",
-        "GMP"
-      ],
-      "postedSource": "Direct Career Page",
-      "summary": "Join GSK’s biopharmaceutical development pilot plant running mammalian mAb cell culture and purification."
+      "applyUrl": "https://www.findaphd.com/phds/bioinformatics/school-of-biological-sciences/?b0M78yYUn00&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "summary": "Life on Earth has undergone major evolutionary transitions that reshaped its biology, including the emergence of multicellularity, adaptation to terrestrial environments, and parasitism. The genomic mechanisms driving th"
     }
   ],
   "niceDrugs": [

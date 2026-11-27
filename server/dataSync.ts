@@ -1360,7 +1360,7 @@ export async function runLiveSync(force = false): Promise<SyncedMarketSnapshot> 
       };
     });
 
-    const liveJobs = [
+    const rawLiveJobs = [
       ...atsResult.jobs,
       ...nhsJobsResult.jobs,
       ...joobleResult.jobs,
@@ -1368,11 +1368,34 @@ export async function runLiveSync(force = false): Promise<SyncedMarketSnapshot> 
       ...adzunaResult.jobs,
       ...googleJobsResult.jobs,
     ];
+
+    // Deduplicate cross-board overlaps while preserving source priority (Direct ATS > NHS Jobs > Reed > Adzuna > Google)
+    const seenRoleKeys = new Set<string>();
+    const dedupedLiveJobs: JobVacancy[] = [];
+    for (const job of rawLiveJobs) {
+      const key = `${job.title.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()}::${job.employer
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, ' ')
+        .trim()}`;
+      if (seenRoleKeys.has(key)) continue;
+      seenRoleKeys.add(key);
+      dedupedLiveJobs.push(job);
+    }
+
+    // Use purely live listings whenever feeds succeed so closed/dead jobs are auto-removed on every sync
     const combinedVacancies =
-      liveJobs.length > 0 ? [...liveJobs, ...UK_JOB_VACANCIES] : UK_JOB_VACANCIES;
+      dedupedLiveJobs.length >= 25 ? dedupedLiveJobs : UK_JOB_VACANCIES;
 
     const now = new Date();
-    const next = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+    let next: Date;
+    if (process.env.GITHUB_ACTIONS === 'true') {
+      next = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), 6, 0, 0, 0));
+      if (next.getTime() <= now.getTime()) {
+        next = new Date(next.getTime() + 24 * 60 * 60 * 1000);
+      }
+    } else {
+      next = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+    }
 
     const snapshot: SyncedMarketSnapshot = {
       lastSyncAt: now.toISOString(),

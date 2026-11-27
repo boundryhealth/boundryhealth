@@ -55,6 +55,9 @@ export default function App() {
   const [feeds, setFeeds] = useState<LiveFeedStatus[]>([]);
   const [apiUsage, setApiUsage] = useState<ApiUsageItem[]>([]);
   const [lastSyncAt, setLastSyncAt] = useState<string>(new Date().toISOString());
+  const [nextScheduledSyncAt, setNextScheduledSyncAt] = useState<string>(
+    new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString()
+  );
   const [latestNiceFeed, setLatestNiceFeed] = useState<LiveNiceGuidanceItem[]>([]);
 
   useEffect(() => {
@@ -78,6 +81,7 @@ export default function App() {
       if (Array.isArray(snap.feeds)) setFeeds(snap.feeds);
       if (Array.isArray(snap.apiUsage)) setApiUsage(snap.apiUsage);
       if (snap.lastSyncAt) setLastSyncAt(snap.lastSyncAt);
+      if (snap.nextScheduledSyncAt) setNextScheduledSyncAt(snap.nextScheduledSyncAt);
       if (Array.isArray(snap.latestNiceFeed)) setLatestNiceFeed(snap.latestNiceFeed);
     };
 
@@ -124,6 +128,7 @@ export default function App() {
         setFeeds(json.snapshot.feeds);
         if (Array.isArray(json.snapshot.apiUsage)) setApiUsage(json.snapshot.apiUsage);
         setLastSyncAt(json.snapshot.lastSyncAt);
+        setNextScheduledSyncAt(json.snapshot.nextScheduledSyncAt);
         setLatestNiceFeed(json.snapshot.latestNiceFeed);
       }
     }
@@ -296,6 +301,7 @@ export default function App() {
             feeds={feeds}
             apiUsage={apiUsage}
             lastSyncAt={lastSyncAt}
+            nextScheduledSyncAt={nextScheduledSyncAt}
             latestNiceFeed={latestNiceFeed}
             onRefreshSync={handleRefreshSync}
             onExitHiddenView={handleExitHiddenView}
