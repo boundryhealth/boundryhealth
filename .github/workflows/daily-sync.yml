@@ -13,18 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - name: Setup Node 22
-        uses: actions/setup-node@v4
+      - name: Setup Node 24
+        uses: actions/setup-node@v6
         with:
-          node-version: '22'
-          cache: 'npm'
+          node-version: '24'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install --no-audit --no-fund
 
-      - name: Fetch Greenhouse/Lever ATS, Jooble UK, Reed UK, Google Jobs, OpenPrescribing & NICE RSS
+      - name: Fetch Direct Biotech ATS, NHS Jobs, Reed UK, NHSBSA & NICE Feeds
         env:
           JOOBLE_API_KEY: ${{ secrets.JOOBLE_API_KEY }}
           REED_API_KEY: ${{ secrets.REED_API_KEY }}

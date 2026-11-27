@@ -37,15 +37,18 @@ on:
     - cron: '0 6 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   sync-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
-          node-version: '22'
-      - run: npm ci
+          node-version: '24'
+      - run: npm install --no-audit --no-fund
       - env:
           JOOBLE_API_KEY: \${{ secrets.JOOBLE_API_KEY }}
           REED_API_KEY: \${{ secrets.REED_API_KEY }}
